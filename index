@@ -44,26 +44,6 @@
       position: relative;
     }
 
-    /* VIDEOS */
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      playsinline: true;
-      -webkit-playsinline: true;
-    }
-
-    .video-light { display: block; }
-    .video-dark { display: none; }
-
-    @media (prefers-color-scheme: dark) {
-      .video-light { display: none; }
-      .video-dark { display: block; }
-      body, html { color: #e5e0d8; }
     }
 
     /* MAIN CONTAINER */
@@ -125,22 +105,9 @@
   </style>
 </head>
 <body>
-<!--
-  <!-- Light Mode Video -->
-  <video class="video-light" autoplay loop muted playsinline webkit-playsinline>
-    <source src="https://www.dropbox.com/scl/fi/nc7vxwpnypug6b6a44v8y/lightVideoComp.mp4?rlkey=hw75lwaarjndhx26axh2l84px&st=bm2l8ne6&dl=1" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 
-  <!-- Dark Mode Video -->
-  <video class="video-dark" autoplay loop muted playsinline webkit-playsinline>
-    <source src="https://www.dropbox.com/scl/fi/qaeoqidp33i8v22qz77u2/darkVideoComp.mp4?rlkey=g2psov7vb95x90fccfsxnptzl&st=ixclgn6w&dl=1" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
--->
 
-  <!-- VIDEO GOES ABOVE HERE: 
-	MAIN CONTENT -->
+  <!-- MAIN CONTENT -->
   <div class="container">
     <!-- Banner Image -->
     <img
