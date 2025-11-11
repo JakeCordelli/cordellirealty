@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ensures the page is responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cordelli Realty</title>
+  <link rel="icon" type="image/png" href="favIcon.png">
+
+  <style>
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+    /* RESET / BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hide default WP header/footer (if applicable) */
+    header, footer {
+      display: none;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'proxima_nova', Helvetica, Arial, sans-serif;
+      font-weight: 50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #e5e0d8;
+      position: relative;
+    }
+
+    /* VIDEOS */
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      playsinline: true;
+      -webkit-playsinline: true;
+    }
+
+    .video-light { display: block; }
+    .video-dark { display: none; }
+
+    @media (prefers-color-scheme: dark) {
+      .video-light { display: none; }
+      .video-dark { display: block; }
+      body, html { color: #e5e0d8; }
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.3);
+      color: black;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 300px; 
+      max-height: 95vh;
+      overflow-y: auto;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .banner {
+      display: block;
+      margin: 4px auto 10px;
+      max-width: 160px;
+      height: auto;
+    }
+
+    .me {
+      max-height: 100px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .stars {
+      max-height: 24px;
+      display: block;
+      margin: 9px auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    .title { font-size: 16px; margin: 10px 0 -10px; }
+    .contact { font-size: 14px; margin: 10px 0; line-height: 18px; }
+    .contact a { color: black; text-decoration: none; margin-left: 5px; }
+    .bottom { font-size: 14px; opacity: 0.75; margin: 5px 0; line-height: 12px; }
+
+    .socialLinks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: -10px auto;
+    }
+    .socialLinks a { display: inline-block; }
+    .socialLinks img {
+      width: 24px; height: 24px;
+      display: block; margin: 10px auto;
+      max-width: 200px; height: auto;
+    }
+  </style>
+</head>
+<body>
+<!--
+  <!-- Light Mode Video -->
+  <video class="video-light" autoplay loop muted playsinline webkit-playsinline>
+    <source src="https://www.dropbox.com/scl/fi/nc7vxwpnypug6b6a44v8y/lightVideoComp.mp4?rlkey=hw75lwaarjndhx26axh2l84px&st=bm2l8ne6&dl=1" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Dark Mode Video -->
+  <video class="video-dark" autoplay loop muted playsinline webkit-playsinline>
+    <source src="https://www.dropbox.com/scl/fi/qaeoqidp33i8v22qz77u2/darkVideoComp.mp4?rlkey=g2psov7vb95x90fccfsxnptzl&st=ixclgn6w&dl=1" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+-->
+
+  <!-- VIDEO GOES ABOVE HERE: 
+	MAIN CONTENT -->
+  <div class="container">
+    <!-- Banner Image -->
+    <img
+      class="banner"
+      src="banner.png"
+      alt="Cordelli Realty Banner"
+    />
+
+    <!-- Me -->
+    <img
+      class="me"
+      src="me.png"
+      alt="Jake Cordelli"
+    />
+
+    <!-- Social Icons -->
+    <div class="socialLinks">
+      <!-- Zillow -->
+      <a target="_blank" href="https://www.zillow.com/profile/cordellirealty">
+        <img src="zillowLogo.png" alt="Zillow" />
+      </a>
+      <!-- Facebook -->
+      <a target="_blank" href="https://www.facebook.com/CordelliRealty/">
+        <img src="facebookLogo.png" alt="Facebook" />
+      </a>
+      <!-- Instagram -->
+      <a target="_blank" href="https://www.instagram.com/cordellirealty/">
+        <img src="instagramLogo.png" alt="Instagram" />
+      </a>
+      <!-- Google -->
+      <a target="_blank" href="https://www.google.com/search?q=Cordelli+Realty+Reviews">
+        <img src="googleLogo.png" alt="Google" />
+      </a>
+    </div>
+
+    <!-- 5-Star Image -->
+    <img
+      class="stars"
+      src="5stars.png"
+      alt="Five Stars"
+    />
+
+    <!-- Contact Info -->
+    <p class="contact">
+      203-856-4317 <br>
+      <a href="mailto:Jake@CordelliRealty.com">Jake@CordelliRealty.com</a>
+    </p>
+
+    <!-- Bottom Text -->
+    <p class="bottom">Founded in 2021 by Jake Cordelli</p>
+    <p class="bottom">Licensed CT real estate broker</p>
+    <p class="bottom">282 Main Street, Wethersfield, CT</p>
+    <p class="bottom">REB#: 0793614</p>
+    <p class="bottom">
+      <script>
+        let d = new Date().toLocaleDateString();
+        document.write("Page updated: " + d);
+      </script>
+    </p>
+  </div>
+
+</body>
+</html>
