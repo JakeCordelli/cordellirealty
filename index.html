@@ -31,36 +31,45 @@
     header, footer {
       display: none;
     }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-    body, html {
-      height: 100%;
-      width: 100%;
-      font-family: 'proxima_nova', Helvetica, Arial, sans-serif;
-      font-weight: 50;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #e5e0d8;
-      position: relative;
-	  background-color: #ffffff;
-    }
+body {
+  min-height: 100vh;   /* fallback */
+  min-height: 100dvh;  /* modern mobile: dynamic viewport height */
+  width: 100%;
+  font-family: 'proxima_nova', Helvetica, Arial, sans-serif;
+  font-weight: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5e0d8;
+  position: relative;
+  background-color: #ffffff;
+}
 
-    /* MAIN CONTAINER */
-    .container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.3);
-      color: black;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-      width: 95%;
-      max-width: 95vh; 
-      max-height: 95vh;
-      overflow-y: auto;
-      margin: auto;
-      padding: 10px;
-    }
+/* MAIN CONTAINER */
+.container {
+  width: 100%;
+  height: 100%;        /* fallback */
+  height: 100dvh;      /* fill screen */
+  max-width: none;     /* remove your 95vh cap */
+  max-height: none;    /* remove your 95vh cap */
+  margin: 0;
+  padding: 10px;
+
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  color: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0;    /* optional: looks more “full screen” */
+  box-shadow: none;    /* optional */
+  overflow-y: auto;
+}
 
     .banner {
       display: block;
