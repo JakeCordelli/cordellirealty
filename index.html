@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cordelli Realty</title>
+    <style>
+        /* Base Architecture */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body, html {
+            height: 100%;
+            /* Subtle Spotlight Effect */
+            background: #fff;
+            color: #000;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+            font-weight: 200; 
+            letter-spacing: 0.15rem;
+            text-align: center;
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Entrance Animation */
+        @keyframes stealthEntry {
+            0% { opacity: 0; transform: translateY(10px); filter: blur(5px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        .interface {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; 
+            max-width: 300px; 
+            width: 100%;
+            padding: 20px;
+            animation: stealthEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        header h1 {
+            font-size: 1.1rem;
+            font-weight: 200;
+            color: #000;
+            margin-bottom: 2px;
+            letter-spacing: 0.5rem;
+            /* Slight glow to the text */
+            text-shadow: 0 0 15px rgba(255,255,255,0.1);
+        }
+
+        .credential {
+            font-size: 0.7rem;
+            color: #000;
+            line-height: 1.4;
+            letter-spacing: 0.12rem;
+            opacity: 0.8;
+        }
+
+        /* Refined Stealth Buttons */
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .contact-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: 200;
+            font-size: 0.8rem;
+            /* Ultra-thin border */
+            border: 1px solid rgba(0,0,0,0.15); 
+            padding: 12px 20px;
+            display: block;
+            width: 100%;
+            transition: all 0.5s ease;
+            border-radius: 40px; 
+            background: rgba(255,255,255,0.02);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* High-End Interaction */
+        .contact-link:active, .contact-link:hover {
+            border-color: rgba(0,0,0,0.3);
+        }
+        
+
+        /* Divider Line */
+        .divider {
+            width: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #222, transparent);
+            margin: 5px auto;
+        }
+
+        .technical-data {
+            font-size: 0.6rem;
+            color: #444; 
+            line-height: 1.8;
+            letter-spacing: 0.08rem;
+        }
+
+        #current-date {
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="interface">
+        <header>
+            <h1>Cordelli Realty</h1>
+            <div class="divider"></div>
+        </header>
+
+        <div class="credential">Founded by Jake Cordelli</div>
+        <div class="credential">Connecticut Real Estate Broker</div>
+
+        <div class="contact-buttons">
+            <a href="tel:2038564317" class="contact-link">203.856.4317</a>
+            <a href="mailto:Jake@CordelliRealty.com" class="contact-link">Jake@CordelliRealty.com</a>
+        </div>
+        
+        <div class="technical-data">
+            282 Main Street, Wethersfield, CT <br> 
+            REB#: 0793614 <br>
+            Page Updated: <span id="current-date"></span>
+        </div>
+    </div>
+
+    <script>
+        // Precision timestamp
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString(undefined, options);
+    </script>
+
+</body>
+</html>
