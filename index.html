@@ -16,7 +16,7 @@
             font-weight: 300; 
             letter-spacing: 0.15rem;
             text-align: center;
-            overflow: hidden; 
+            overflow-x: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,17 +38,24 @@
             animation: stealthEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        /* Professional Monochrome Portrait - Enlarged */
+        /* Zillow Affiliation Logo */
+        .affiliation-logo {
+            max-width: 140px;
+            width: auto;
+            height: auto;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        /* Professional Portrait */
         .portrait-frame {
-            width: 170px; /* Increased size from 85px */
-            height: 170px; /* Increased size from 85px */
-            margin: 0 auto 20px auto; /* Increased bottom margin for better spacing */
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px auto;
             border-radius: 50%;
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.05);
             background: #f9f9f9;
-            /* Force grayscale to match the aesthetic */
-            filter: grayscale(0%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,6 +65,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 20%;
             display: block;
         }
 
@@ -91,17 +99,28 @@
             font-size: 0.8rem;
             border: 1px solid rgba(0,0,0,0.15); 
             padding: 12px 20px;
-            display: block;
             width: 100%;
             transition: all 0.5s ease;
             border-radius: 40px; 
             background: rgba(255,255,255,0.02);
             -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .contact-link:active, .contact-link:hover {
             border-color: rgba(0,0,0,0.3);
             background: rgba(0,0,0,0.02);
+        }
+
+        .link-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            display: block;
+            object-fit: contain; /* Ensures the PNG logo fits perfectly */
         }
         
         /* The Signature Blue Divider */
@@ -119,6 +138,7 @@
             line-height: 1.8;
             letter-spacing: 0.08rem;
             opacity: .5;
+            margin-top: 10px;
         }
 
         #current-date {
@@ -130,6 +150,7 @@
 <body>
 
     <div class="interface">
+
         <div class="portrait-frame">
             <img src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/me.png" alt="Jake Cordelli">
         </div>
@@ -145,6 +166,16 @@
         <div class="contact-buttons">
             <a href="tel:2038564317" class="contact-link">203.856.4317</a>
             <a href="mailto:Jake@CordelliRealty.com" class="contact-link">Jake@CordelliRealty.com</a>
+            
+            <a href="https://www.zillow.com/profile/cordellirealty" target="_blank" class="contact-link">
+                <img src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/zillowLogoLarge.png" alt="Zillow" class="link-icon">
+                Zillow
+            </a>
+            
+            <a href="https://www.google.com/search?q=Cordelli+Realty&stick=H4sIAAAAAAAA_-NgU1I1qLCwTDUzMzY3MjQxTU1OMUmxMqhINUgzsDA3STVPs0i2TDYyXMTK75xflJKak5OpEJSamFNSCQAfilIUOwAAAA&hl=en&mat=Cfh3JGNMCIb7ElcBqiIDwr0BtHosesz8ifpun63KI9pQO0WtgNTCyTE7GdGaY_62aT3n0bFmIWZoBbfcCEDmXoB4rDue0ZgOGhjRvRHcWOoaHAWU5zkg_IfORgjlABR-jUI&authuser=0#lpsivoi=1&wptab=LocalPoiPosts" target="_blank" class="contact-link">
+                <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l.019-.016l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                Google
+            </a>
         </div>
         
         <div class="technical-data">
