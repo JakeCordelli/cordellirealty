@@ -73,18 +73,18 @@
         .interface {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
             max-width: 300px;
-            padding: 8px 20px;
+            padding: 14px 20px;
             animation: stealthEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1)
                 forwards;
         }
 
         .portrait-frame {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 5px;
+            width: 155px;
+            height: 155px;
+            margin: 0 auto 8px;
             border-radius: 50%;
             overflow: hidden;
             border: 1px solid rgba(212, 212, 212, 0.12);
@@ -109,7 +109,7 @@
             font-weight: 300;
             line-height: 1.15;
             letter-spacing: 0.44rem;
-            margin-bottom: 7px;
+            margin-bottom: 9px;
         }
 
         .credential {
@@ -122,15 +122,15 @@
         .divider {
             width: 110px;
             height: 2px;
-            margin: 9px auto 6px;
+            margin: 11px auto 8px;
             background: rgb(64 142 255 / 50%);
         }
 
         .contact-buttons {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin: 10px 0 6px;
+            gap: 9px;
+            margin: 13px 0 8px;
         }
 
         .contact-link {
@@ -175,7 +175,7 @@
             line-height: 1.55;
             letter-spacing: 0.06rem;
             opacity: 0.5;
-            margin-top: 4px;
+            margin-top: 7px;
         }
 
         #current-date {
@@ -185,20 +185,21 @@
         /* Slightly compressed layout for shorter mobile screens */
         @media (max-height: 750px) {
             body {
-                align-items: flex-start;
+                align-items: center;
                 padding-top: max(10px, env(safe-area-inset-top));
+                padding-bottom: max(10px, env(safe-area-inset-bottom));
             }
 
             .interface {
-                gap: 6px;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                gap: 7px;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
 
             .portrait-frame {
-                width: 135px;
-                height: 135px;
-                margin-bottom: 3px;
+                width: 140px;
+                height: 140px;
+                margin-bottom: 7px;
             }
 
             header h1 {
@@ -212,12 +213,12 @@
             }
 
             .divider {
-                margin: 7px auto 4px;
+                margin: 8px auto 6px;
             }
 
             .contact-buttons {
-                gap: 7px;
-                margin: 8px 0 4px;
+                gap: 8px;
+                margin: 10px 0 6px;
             }
 
             .contact-link {
@@ -234,6 +235,16 @@
 
         /* Extra compression only for very short screens */
         @media (max-height: 620px) {
+            body {
+                align-items: center;
+            }
+
+            .interface {
+                gap: 6px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+            }
+
             .portrait-frame {
                 width: 115px;
                 height: 115px;
