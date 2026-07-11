@@ -74,9 +74,9 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            width: 100%;
-            max-width: 300px;
-            padding: 14px 20px;
+            width: calc(100% - 16px);
+            max-width: 360px;
+            padding: 14px 8px;
             animation: stealthEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1)
                 forwards;
         }
@@ -105,18 +105,20 @@
 
         header h1 {
             color: #28282d;
-            font-size: 1.35rem;
+            font-size: clamp(1.15rem, 5.3vw, 1.35rem);
             font-weight: 300;
             line-height: 1.15;
-            letter-spacing: 0.44rem;
+            letter-spacing: clamp(0.28rem, 1.5vw, 0.44rem);
             margin-bottom: 9px;
+            white-space: nowrap;
         }
 
         .credential {
             color: #28282d;
-            font-size: 0.82rem;
+            font-size: clamp(0.72rem, 3.35vw, 0.82rem);
             line-height: 1.35;
-            letter-spacing: 0.1rem;
+            letter-spacing: clamp(0.035rem, 0.32vw, 0.08rem);
+            white-space: nowrap;
         }
 
         .divider {
@@ -129,12 +131,16 @@
         .contact-buttons {
             display: flex;
             flex-direction: column;
+            align-self: center;
             gap: 9px;
-            margin: 13px 0 8px;
+            width: max-content;
+            max-width: calc(100vw - 32px);
+            margin: 13px auto 8px;
         }
 
         .contact-link {
             width: 100%;
+            min-width: 100%;
             min-height: 39px;
             padding: 9px 18px;
             border: 1px solid rgba(40, 40, 45, 0.16);
@@ -151,6 +157,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            white-space: nowrap;
         }
 
         .contact-link:hover,
@@ -176,6 +183,7 @@
             letter-spacing: 0.06rem;
             opacity: 0.5;
             margin-top: 7px;
+            white-space: nowrap;
         }
 
         #current-date {
