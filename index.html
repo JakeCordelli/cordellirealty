@@ -251,14 +251,48 @@
             background: #ececee;
         }
 
-        .featured-sale-image {
+        .featured-sale-video {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
-            transform: translateY(-1.25%);
+            object-fit: cover;
+            object-position: center;
+            background: #ececee;
+        }
+
+        .video-play-fallback {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: none;
+            place-items: center;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: rgba(0, 0, 0, 0.12);
+            color: #ffffff;
+            font: inherit;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .video-play-fallback span {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            padding-left: 4px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.58);
+            font-size: 1.45rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .video-play-fallback.is-visible {
+            display: grid;
         }
 
         .sale-banner {
@@ -480,11 +514,34 @@
             <div class="featured-sale-label">Latest Transaction</div>
 
             <div class="featured-sale-image-wrap">
-                <img
-                    src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/a4f2ee96b68e7dcb5c57b430d79a697152a2b3f0/Saint%20Jo.jpg"
-                    alt="Trumbull, Connecticut medical facility"
-                    class="featured-sale-image"
+                <video
+                    id="transaction-video"
+                    class="featured-sale-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="auto"
+                    poster="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/a4f2ee96b68e7dcb5c57b430d79a697152a2b3f0/Saint%20Jo.jpg"
+                    aria-label="Video of the sold medical facility at 6448 Main Street, Trumbull, Connecticut"
                 >
+                    <source
+                        src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/ba1f94f3c5c23cd0d9f437af209d330b1ef5e7ad/Saint%20Jos%20%281%29.mp4"
+                        type="video/mp4"
+                    >
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <button
+                    id="video-play-fallback"
+                    class="video-play-fallback"
+                    type="button"
+                    aria-label="Play transaction video"
+                >
+                    <span aria-hidden="true">▶</span>
+                </button>
+
                 <div class="sale-banner">SOLD</div>
             </div>
 
@@ -595,6 +652,47 @@
 
         document.getElementById("current-date").textContent =
             new Date().toLocaleDateString(undefined, options);
+
+        const transactionVideo = document.getElementById("transaction-video");
+        const videoFallback = document.getElementById("video-play-fallback");
+
+        if (transactionVideo && videoFallback) {
+            transactionVideo.muted = true;
+            transactionVideo.defaultMuted = true;
+
+            const showPlayFallback = () => {
+                videoFallback.classList.add("is-visible");
+            };
+
+            const hidePlayFallback = () => {
+                videoFallback.classList.remove("is-visible");
+            };
+
+            const attemptPlayback = async () => {
+                try {
+                    await transactionVideo.play();
+                    hidePlayFallback();
+                } catch (error) {
+                    showPlayFallback();
+                }
+            };
+
+            transactionVideo.addEventListener("playing", hidePlayFallback);
+            transactionVideo.addEventListener("pause", () => {
+                if (!transactionVideo.ended) {
+                    showPlayFallback();
+                }
+            });
+
+            transactionVideo.addEventListener("error", showPlayFallback);
+            transactionVideo.addEventListener("canplay", attemptPlayback, {
+                once: true
+            });
+
+            videoFallback.addEventListener("click", attemptPlayback);
+
+            attemptPlayback();
+        }
     </script>
 </body>
 </html>
