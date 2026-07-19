@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cordelli Realty</title>
+
+    <!-- Social link preview metadata -->
+    <meta name="description" content="Cordelli Realty">
+    <link rel="canonical" href="https://cordellirealty.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cordelli Realty">
+    <meta property="og:title" content="Cordelli Realty">
+    <meta property="og:description" content="Cordelli Realty">
+    <meta property="og:url" content="https://cordellirealty.com/">
+    <meta property="og:image" content="https://cordellirealty.com/social-preview.png">
+    <meta property="og:image:secure_url" content="https://cordellirealty.com/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Cordelli Realty">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cordelli Realty">
+    <meta name="twitter:description" content="Cordelli Realty">
+    <meta name="twitter:image" content="https://cordellirealty.com/social-preview.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/favIcon.png"
+    >
+
+    <style>
+        :root {
+            --page-bg: #f4f3f0;
+            --card-bg: #ffffff;
+            --text: #242426;
+            --muted: #6c6b6d;
+            --navy: #13293d;
+            --navy-hover: #1b3852;
+            --blue: #408eff;
+            --gold: #f2b705;
+            --red: #a83c3c;
+            --border: rgba(36, 36, 38, 0.10);
+            --shadow: 0 14px 38px rgba(36, 36, 38, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--page-bg);
+            color-scheme: light;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: var(--page-bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter",
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+        img,
+        video,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        .page {
+            width: min(100% - 24px, 420px);
+            margin: 0 auto;
+            padding:
+                max(18px, env(safe-area-inset-top))
+                0
+                max(22px, env(safe-area-inset-bottom));
+        }
+
+        .identity {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .portrait-frame {
+            width: 158px;
+            height: 158px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid rgba(36, 36, 38, 0.10);
+            background: #ecebe8;
+            box-shadow: 0 8px 24px rgba(36, 36, 38, 0.07);
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        h1 {
+            margin-top: 22px;
+            color: var(--text);
+            font-size: clamp(1.30rem, 6vw, 1.58rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: clamp(0.24rem, 1.6vw, 0.40rem);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .divider {
+            width: 96px;
+            height: 2px;
+            margin: 13px auto 16px;
+            background: rgba(64, 142, 255, 0.72);
+        }
+
+        .credentials {
+            display: grid;
+            gap: 5px;
+        }
+
+        .credential {
+            color: var(--text);
+            font-size: clamp(0.78rem, 3.25vw, 0.88rem);
+            font-weight: 350;
+            line-height: 1.45;
+            letter-spacing: 0.025rem;
+            white-space: nowrap;
+        }
+
+        .section-label {
+            margin: 23px 0 10px;
+            color: #315f93;
+            font-size: 0.70rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.20rem;
+            text-transform: uppercase;
+        }
+
+        .transaction-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            text-align: left;
+        }
+
+        .transaction-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: #deddda;
+        }
+
+        .transaction-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            background: #deddda;
+        }
+
+        .sold-badge {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            z-index: 3;
+            padding: 7px 11px;
+            border-radius: 8px;
+            background: var(--red);
+            color: #ffffff;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16);
+            font-size: 0.68rem;
+            font-weight: 650;
+            line-height: 1;
+            letter-spacing: 0.10rem;
+        }
+
+        .video-play-fallback {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: none;
+            place-items: center;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: rgba(0, 0, 0, 0.16);
+            color: #ffffff;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .video-play-fallback.is-visible {
+            display: grid;
+        }
+
+        .video-play-fallback span {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            padding-left: 4px;
+            border-radius: 50%;
+            background: rgba(19, 41, 61, 0.86);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+            font-size: 1.35rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .transaction-content {
+            padding: 16px 16px 17px;
+        }
+
+        .transaction-heading {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .transaction-address {
+            min-width: 0;
+        }
+
+        .street {
+            color: var(--text);
+            font-size: clamp(1.08rem, 5vw, 1.28rem);
+            font-weight: 650;
+            line-height: 1.15;
+            letter-spacing: -0.015rem;
+        }
+
+        .locality {
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 0.84rem;
+            font-weight: 400;
+            line-height: 1.25;
+            letter-spacing: 0.01rem;
+        }
+
+        .price {
+            color: var(--navy);
+            font-size: clamp(1.40rem, 7vw, 1.85rem);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.025rem;
+            white-space: nowrap;
+        }
+
+        .transaction-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 9px;
+            border: 1px solid rgba(36, 36, 38, 0.09);
+            border-radius: 999px;
+            background: rgba(36, 36, 38, 0.025);
+            color: #48474a;
+            font-size: 0.68rem;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: 0.018rem;
+            white-space: nowrap;
+        }
+
+        .transaction-description {
+            color: #474649;
+            font-family: inherit;
+            font-size: 0.80rem;
+            font-weight: 350;
+            line-height: 1.58;
+            letter-spacing: 0.012rem;
+        }
+
+        .contact-actions {
+            display: grid;
+            gap: 9px;
+            margin: 17px 0 0;
+        }
+
+        .contact-link {
+            min-height: 47px;
+            padding: 10px 17px;
+            border: 1px solid rgba(19, 41, 61, 0.86);
+            border-radius: 11px;
+            color: var(--navy);
+            background: transparent;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 450;
+            line-height: 1.15;
+            letter-spacing: 0.018rem;
+            transition:
+                transform 180ms ease,
+                background 180ms ease,
+                border-color 180ms ease,
+                color 180ms ease,
+                box-shadow 180ms ease;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-1px);
+            border-color: var(--navy);
+            background: rgba(19, 41, 61, 0.035);
+        }
+
+        .contact-link:focus-visible,
+        .video-play-fallback:focus-visible {
+            outline: 3px solid rgba(64, 142, 255, 0.36);
+            outline-offset: 3px;
+        }
+
+        .contact-link.primary {
+            border-color: var(--navy);
+            background: var(--navy);
+            color: #ffffff;
+            box-shadow: 0 8px 22px rgba(19, 41, 61, 0.15);
+        }
+
+        .contact-link.primary:hover {
+            border-color: var(--navy-hover);
+            background: var(--navy-hover);
+        }
+
+        .button-icon {
+            width: 19px;
+            height: 19px;
+            flex: 0 0 auto;
+        }
+
+        .review-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+        .review-row .contact-link {
+            min-width: 0;
+        }
+
+        .brand-icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            object-fit: contain;
+        }
+
+        .rating {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            color: var(--gold);
+            font-size: 1.10rem;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+
+        .rating-label {
+            margin-top: 6px;
+            color: #4d4c4e;
+            font-size: 0.74rem;
+            font-weight: 450;
+            letter-spacing: 0.025rem;
+        }
+
+        .footer {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(36, 36, 38, 0.10);
+            color: #59585b;
+            font-size: 0.68rem;
+            font-weight: 400;
+            line-height: 1.65;
+            letter-spacing: 0.018rem;
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 350px) {
+            .page {
+                width: min(100% - 18px, 420px);
+            }
+
+            .portrait-frame {
+                width: 142px;
+                height: 142px;
+            }
+
+            h1 {
+                letter-spacing: 0.22rem;
+            }
+
+            .credential {
+                font-size: 0.74rem;
+            }
+
+            .transaction-heading {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .price {
+                justify-self: start;
+            }
+
+            .contact-link {
+                padding-inline: 12px;
+                font-size: 0.77rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <section class="identity" aria-label="Cordelli Realty">
+            <div class="portrait-frame">
+                <img
+                    src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/me.png"
+                    alt="Jake Cordelli"
+                    width="310"
+                    height="310"
+                    decoding="async"
+                    fetchpriority="high"
+                >
+            </div>
+
+            <header>
+                <h1>Cordelli Realty</h1>
+                <div class="divider" aria-hidden="true"></div>
+            </header>
+
+            <div class="credentials">
+                <div class="credential">Connecticut Real Estate Broker</div>
+                <div class="credential">Founded &amp; Owned by Jake Cordelli</div>
+                <div class="credential">Commercial Investment Sales</div>
+            </div>
+        </section>
+
+        <div class="section-label">Latest Transaction</div>
+
+        <article class="transaction-card">
+            <div class="transaction-media">
+                <video
+                    id="transaction-video"
+                    class="transaction-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="auto"
+                    poster="Saint%20Jo.jpg"
+                    aria-label="Video of the sold medical facility at 6448 Main Street, Trumbull, Connecticut"
+                >
+                    <!-- Preferred source: the video file in the same GitHub Pages folder as this HTML. -->
+                    <source
+                        src="Saint%20Jos%20%281%29.mp4"
+                        type="video/mp4"
+                    >
+
+                    <!-- Fallback source: the uploaded GitHub permalink converted to a raw media URL. -->
+                    <source
+                        src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/ba1f94f3c5c23cd0d9f437af209d330b1ef5e7ad/Saint%20Jos%20%281%29.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <button
+                    id="video-play-fallback"
+                    class="video-play-fallback"
+                    type="button"
+                    aria-label="Play transaction video"
+                >
+                    <span aria-hidden="true">▶</span>
+                </button>
+
+                <div class="sold-badge">SOLD</div>
+            </div>
+
+            <div class="transaction-content">
+                <div class="transaction-heading">
+                    <div class="transaction-address">
+                        <div class="street">6448 Main Street</div>
+                        <div class="locality">Trumbull, Connecticut</div>
+                    </div>
+
+                    <div class="price">$1.8M</div>
+                </div>
+
+                <div class="transaction-meta" aria-label="Transaction details">
+                    <span class="meta-item">178,000 SF</span>
+                    <span class="meta-item">274 Beds</span>
+                    <span class="meta-item">Buyer Represented</span>
+                    <span class="meta-item">April 2026</span>
+                </div>
+
+                <p class="transaction-description">
+                    Off-market acquisition completed at $10.07 per square foot—among
+                    the lowest-priced commercial transactions in Fairfield County in 2026.
+                </p>
+            </div>
+        </article>
+
+        <section class="contact-actions" aria-label="Contact and reviews">
+            <a href="tel:2038564317" class="contact-link primary">
+                <svg
+                    class="button-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call/Text 203.856.4317
+            </a>
+
+            <a
+                href="mailto:Jake@CordelliRealty.com"
+                class="contact-link"
+            >
+                <svg
+                    class="button-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="m3 7 9 6 9-6"/>
+                </svg>
+                Jake@CordelliRealty.com
+            </a>
+
+            <div class="review-row">
+                <a
+                    href="https://www.zillow.com/profile/cordellirealty"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                >
+                    <img
+                        src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/zillowLogoLarge.png"
+                        alt=""
+                        class="brand-icon"
+                        width="36"
+                        height="36"
+                        loading="lazy"
+                    >
+                    Zillow
+                </a>
+
+                <a
+                    href="https://share.google/2RXLQpwNDX313o0mU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                >
+                    <svg
+                        class="brand-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        aria-hidden="true"
+                    >
+                        <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                        <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4c-7.682 0-14.344 4.337-17.694 10.691z"/>
+                        <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                        <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.019-.016 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                    </svg>
+                    Google
+                </a>
+            </div>
+        </section>
+
+        <div class="rating" aria-label="Five out of five client rating">
+            <div class="stars" aria-hidden="true">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+            </div>
+            <div class="rating-label">5.0 Client Rating</div>
+        </div>
+
+        <footer class="footer">
+            License REB.0793614<br>
+            282 Main Street, Wethersfield, CT<br>
+            Page Updated:
+            <time id="current-date" datetime=""></time><br>
+            Established 2021
+        </footer>
+    </main>
+
+    <script>
+        const currentDate = new Date();
+        const dateOptions = {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        };
+
+        const dateElement = document.getElementById("current-date");
+
+        dateElement.textContent = currentDate.toLocaleDateString(
+            undefined,
+            dateOptions
+        );
+
+        dateElement.dateTime = currentDate.toISOString().slice(0, 10);
+
+        const transactionVideo = document.getElementById("transaction-video");
+        const playFallback = document.getElementById("video-play-fallback");
+
+        if (transactionVideo && playFallback) {
+            transactionVideo.muted = true;
+            transactionVideo.defaultMuted = true;
+
+            const showPlayFallback = () => {
+                playFallback.classList.add("is-visible");
+            };
+
+            const hidePlayFallback = () => {
+                playFallback.classList.remove("is-visible");
+            };
+
+            const attemptPlayback = async () => {
+                try {
+                    await transactionVideo.play();
+                    hidePlayFallback();
+                } catch (error) {
+                    showPlayFallback();
+                }
+            };
+
+            transactionVideo.addEventListener("playing", hidePlayFallback);
+            transactionVideo.addEventListener("error", showPlayFallback);
+
+            transactionVideo.addEventListener(
+                "canplay",
+                attemptPlayback,
+                { once: true }
+            );
+
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden && transactionVideo.paused) {
+                    attemptPlayback();
+                }
+            });
+
+            playFallback.addEventListener("click", attemptPlayback);
+
+            attemptPlayback();
+        }
+    </script>
+</body>
+</html>
