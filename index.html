@@ -2798,6 +2798,13 @@
             }
         }
 
+
+        /* Flat slideshow cards: remove the shadow beneath listing/transaction boxes. */
+        .transactions-track .transaction-card,
+        .transactions-track .transaction-card--for-sale {
+            box-shadow: none !important;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .theme-toggle-track,
             .theme-toggle-thumb,
@@ -3094,7 +3101,7 @@
             },
             {
                         "status": "SOLD",
-                        "price": "$1.8M",
+                        "price": "$1,800,000",
                         "street": "6448 Main Street",
                         "locality": "Trumbull, Connecticut",
                         "specs": [
