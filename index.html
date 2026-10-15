@@ -2939,6 +2939,16 @@
             }
         }
 
+
+        /* Completed rental transactions */
+        .transaction-card--rented .sold-badge {
+            background: #5f6d66;
+        }
+
+        html[data-theme="dark"] .transaction-card--rented .sold-badge {
+            background: #70847a;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .theme-toggle-track,
             .theme-toggle-thumb,
@@ -3684,14 +3694,14 @@
                         ],
                         "description": "Character-filled apartment with hardwood floors, generous natural light, an enclosed porch, dishwasher, off-street parking, laundry hookups, outdoor space, and attic storage.",
                         "mediaType": "image",
-                        "alt": "118 Cambridge Street #2, West Hartford, Connecticut",
+                        "alt": "118 Cambridge Street Unit 2, West Hartford, Connecticut",
                         "placeholder": false,
                         "represented": "Landlord",
                         "listingUrl": "https://www.coldwellbankerhomes.com/ct/west-hartford/118-cambridge-st-2/pid_73938228/",
-                        "mediaSrc": "https://photos.zillowstatic.com/fp/b9bb303a34d9cd2ee850363733be41fe-cc_ft_960.jpg"
+                        "mediaSrc": "https://api.microlink.io/?url=https%3A%2F%2Fwww.coldwellbankerhomes.com%2Fct%2Fwest-hartford%2F118-cambridge-st-2%2Fpid_73938228%2F&embed=image.url"
             },
             {
-                        "status": "FOR RENT",
+                        "status": "RENTED",
                         "price": "$1,600/mo",
                         "street": "41 Spring Street #A",
                         "locality": "Willimantic, Connecticut",
@@ -3709,7 +3719,7 @@
                         "mediaSrc": "https://photos.zillowstatic.com/fp/3252e2ab83a6b7f78a2b4c485647dbe8-cc_ft_960.jpg"
             },
             {
-                        "status": "FOR RENT",
+                        "status": "RENTED",
                         "price": "$2,800/mo",
                         "street": "185 Walnut Street",
                         "locality": "Willimantic, Connecticut",
@@ -3727,7 +3737,7 @@
                         "mediaSrc": "https://m1.cbhomes.com/p/229/24205172/BaDff5ccee65403/pds23tp.webp"
             },
             {
-                        "status": "FOR RENT",
+                        "status": "RENTED",
                         "price": "$2,800/mo",
                         "street": "251 Summit Street",
                         "locality": "Willimantic, Connecticut",
@@ -3878,21 +3888,30 @@
                         ? " is-placeholder"
                         : "";
 
-                    const isActiveListing =
-                        transaction.status !== "SOLD";
+                    const isActiveListing = [
+                        "FOR SALE",
+                        "FOR RENT",
+                        "UNDER CONTRACT"
+                    ].includes(transaction.status);
 
                     const activeListingClass = isActiveListing
                         ? " transaction-card--for-sale transaction-card--active-listing"
                         : "";
 
+                    const rentedClass = transaction.status === "RENTED"
+                        ? " transaction-card--rented"
+                        : "";
+
                     const cardType =
                         transaction.status === "FOR RENT"
                             ? "Rental listing"
-                            : transaction.status === "FOR SALE"
-                                ? "For sale listing"
-                                : transaction.status === "UNDER CONTRACT"
-                                    ? "Under contract listing"
-                                    : "Transaction";
+                            : transaction.status === "RENTED"
+                                ? "Rented property"
+                                : transaction.status === "FOR SALE"
+                                    ? "For sale listing"
+                                    : transaction.status === "UNDER CONTRACT"
+                                        ? "Under contract listing"
+                                        : "Transaction";
 
                     const representationMarkup = transaction.represented
                         ? `
@@ -3913,7 +3932,8 @@
                                 rel="noopener noreferrer"
                             >
                                 ${
-                                    transaction.status === "FOR RENT"
+                                    transaction.status === "FOR RENT" ||
+                                    transaction.status === "RENTED"
                                         ? "View Rental"
                                         : "View Listing"
                                 }
@@ -3923,7 +3943,7 @@
 
                     return `
                         <article
-                            class="transaction-card${placeholderClass}${activeListingClass}"
+                            class="transaction-card${placeholderClass}${activeListingClass}${rentedClass}"
                             role="group"
                             aria-roledescription="slide"
                             aria-label="${cardType} ${index + 1} of ${activeTransactions.length}: ${escapeHTML(transaction.street)}"
