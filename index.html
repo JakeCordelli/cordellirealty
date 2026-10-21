@@ -3256,8 +3256,8 @@
          */
         /*
          * ACTIVE LISTINGS + SALES HISTORY
-         * Sales shows all current sale listings first, followed by 13 closed sales.
-         * Rentals shows the current rental listings represented by Cordelli Realty, with 88 Florence removed.
+         * Sales shows active listings ordered from highest to lowest price, followed by sold listings ordered from highest to lowest price.
+         * Rentals shows active listings ordered from highest to lowest rent, followed by completed rental transactions.
          */
         const salesTransactions = [
             {
@@ -3276,7 +3276,97 @@
                         "placeholder": false,
                         "represented": "Seller",
                         "listingUrl": "https://www.zillow.com/homedetails/52-Stonewall-Rd-Salem-CT-06420/80398182_zpid/",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/2d9da250123e8ff90eed0be70f7a02e7fb0c3a8e/Property%20Photos/52%20Stonewall%20Road.png"
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/9242d7d2170bb4981acf2f2639782d3b-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$750,000",
+                        "street": "217 Alden Avenue",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3.5 Baths",
+                                    "2,593 SF"
+                        ],
+                        "description": "Westville two-family offering seven total bedrooms, updated interiors, generous living space, a covered sun porch, private yard, and convenient access to universities and Downtown.",
+                        "mediaType": "image",
+                        "alt": "217 Alden Avenue, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.raveis.com/prop/24213936/217-alden-avenue-new-haven-ct-06515",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/3e446ef84f0cc831423259aa088f996e-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$650,000",
+                        "street": "39-41 Anthony Street",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3 Baths",
+                                    "3,262 SF"
+                        ],
+                        "description": "Desirable three-family property with updated units, hardwood floors, stainless steel appliances, off-street parking, and convenient access to Westville and area amenities.",
+                        "mediaType": "image",
+                        "alt": "39-41 Anthony Street, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.raveis.com/prop/24213941/39-41-anthony-street-new-haven-ct-06515",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/617110af8ac335f4f446094d15fa10b1-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$570,000",
+                        "street": "53 Orlando Street",
+                        "locality": "West Haven, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "2,768 SF"
+                        ],
+                        "description": "Updated three-family investment property near the University of New Haven with central air, granite counters, stainless appliances, flexible office space, and off-street parking.",
+                        "mediaType": "image",
+                        "alt": "53 Orlando Street, West Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.raveis.com/prop/24213933/53-orlando-street-west-haven-ct-06516",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/d6cf8e9ebe765baec850d0cbf96e717b-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$510,000",
+                        "street": "44 Dudley Street",
+                        "locality": "Hamden, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3 Baths",
+                                    "3 Family"
+                        ],
+                        "description": "Flexible three-family property with hardwood floors, stainless steel appliances, private outdoor space, off-street parking, and convenient access to New Haven-area universities.",
+                        "mediaType": "image",
+                        "alt": "44 Dudley Street, Hamden, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/702a04d41e653f612ebbae55061a1d60-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$470,000",
+                        "street": "11 Dorman Street",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "3,171 SF"
+                        ],
+                        "description": "Three-family investment or owner-occupant opportunity with three spacious apartments and convenient access to Downtown New Haven, universities, major employers, shopping, transit, and highways.",
+                        "mediaType": "image",
+                        "alt": "11 Dorman Street, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.redfin.com/CT/New-Haven/11-Dorman-St-06511/home/54291944",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/c2ddfdd9746cb16f3b308c505b700f5f-cc_ft_960.jpg"
             },
             {
                         "status": "UNDER CONTRACT",
@@ -3297,96 +3387,6 @@
                         "mediaSrc": "https://photos.zillowstatic.com/fp/c9812cf0561de0cabec66588a08edda0-cc_ft_960.jpg"
             },
             {
-                        "status": "FOR SALE",
-                        "price": "$470,000",
-                        "street": "11 Dorman Street",
-                        "locality": "New Haven, Connecticut",
-                        "specs": [
-                                    "8 Beds",
-                                    "3 Baths",
-                                    "3,171 SF"
-                        ],
-                        "description": "Three-family investment or owner-occupant opportunity with three spacious apartments and convenient access to Downtown New Haven, universities, major employers, shopping, transit, and highways.",
-                        "mediaType": "image",
-                        "alt": "11 Dorman Street, New Haven, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller",
-                        "listingUrl": "https://www.redfin.com/CT/New-Haven/11-Dorman-St-06511/home/54291944",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/018db59cdfefab4a4e7c83749e807ff2b00fad98/Property%20Photos/11%20Dorman.jpg"
-            },
-            {
-                        "status": "FOR SALE",
-                        "price": "$510,000",
-                        "street": "44 Dudley Street",
-                        "locality": "Hamden, Connecticut",
-                        "specs": [
-                                    "7 Beds",
-                                    "3 Baths",
-                                    "3 Family"
-                        ],
-                        "description": "Flexible three-family property with hardwood floors, stainless steel appliances, private outdoor space, off-street parking, and convenient access to New Haven-area universities.",
-                        "mediaType": "image",
-                        "alt": "44 Dudley Street, Hamden, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller",
-                        "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/018db59cdfefab4a4e7c83749e807ff2b00fad98/Property%20Photos/44%20Dudley.jpg"
-            },
-            {
-                        "status": "FOR SALE",
-                        "price": "$650,000",
-                        "street": "39-41 Anthony Street",
-                        "locality": "New Haven, Connecticut",
-                        "specs": [
-                                    "7 Beds",
-                                    "3 Baths",
-                                    "3,262 SF"
-                        ],
-                        "description": "Desirable three-family property with updated units, hardwood floors, stainless steel appliances, off-street parking, and convenient access to Westville and area amenities.",
-                        "mediaType": "image",
-                        "alt": "39-41 Anthony Street, New Haven, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213941/39-41-anthony-street-new-haven-ct-06515",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/018db59cdfefab4a4e7c83749e807ff2b00fad98/Property%20Photos/39%20Anthony.jpg"
-            },
-            {
-                        "status": "FOR SALE",
-                        "price": "$570,000",
-                        "street": "53 Orlando Street",
-                        "locality": "West Haven, Connecticut",
-                        "specs": [
-                                    "8 Beds",
-                                    "3 Baths",
-                                    "2,768 SF"
-                        ],
-                        "description": "Updated three-family investment property near the University of New Haven with central air, granite counters, stainless appliances, flexible office space, and off-street parking.",
-                        "mediaType": "image",
-                        "alt": "53 Orlando Street, West Haven, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213933/53-orlando-street-west-haven-ct-06516",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/018db59cdfefab4a4e7c83749e807ff2b00fad98/Property%20Photos/53%20Orlando.jpg"
-            },
-            {
-                        "status": "FOR SALE",
-                        "price": "$750,000",
-                        "street": "217 Alden Avenue",
-                        "locality": "New Haven, Connecticut",
-                        "specs": [
-                                    "7 Beds",
-                                    "3.5 Baths",
-                                    "2,593 SF"
-                        ],
-                        "description": "Westville two-family offering seven total bedrooms, updated interiors, generous living space, a covered sun porch, private yard, and convenient access to universities and Downtown.",
-                        "mediaType": "image",
-                        "alt": "217 Alden Avenue, New Haven, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213936/217-alden-avenue-new-haven-ct-06515",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/018db59cdfefab4a4e7c83749e807ff2b00fad98/Property%20Photos/217%20Alden.jpg"
-            },
-            {
                         "status": "SOLD",
                         "price": "$1,800,000",
                         "street": "6448 Main Street",
@@ -3402,74 +3402,6 @@
                         "alt": "6448 Main Street, Trumbull, Connecticut",
                         "placeholder": false,
                         "represented": "Buyer & Seller"
-            },
-            {
-                        "status": "SOLD",
-                        "price": "$287,000",
-                        "street": "67 Harold Road",
-                        "locality": "Farmington, Connecticut",
-                        "specs": [
-                                    "3 Beds",
-                                    "1 Bath",
-                                    "Single Family"
-                        ],
-                        "description": "Raised-ranch renovation opportunity on a low-traffic street with a two-car garage, rough-plumbed unfinished basement and a large, level yard.",
-                        "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/3f9546e231a79156960982fa4680a2f5753a150a/Property%20Photos/harold.png",
-                        "alt": "67 Harold Road, Farmington, Connecticut",
-                        "placeholder": false,
-                        "represented": "Buyer"
-            },
-            {
-                        "status": "SOLD",
-                        "price": "$615,000",
-                        "street": "16 Pine Tree Hill Road",
-                        "locality": "Newtown, Connecticut",
-                        "specs": [
-                                    "4 Beds",
-                                    "3 Baths",
-                                    "Single Family"
-                        ],
-                        "description": "Private Newtown Colonial with an open floor plan, hardwood floors, island kitchen, fireplace, screened porch, deck and in-ground pool on more than two wooded acres.",
-                        "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/16%20Pine%20Tree%20Hill%20Road.webp",
-                        "alt": "16 Pine Tree Hill Road, Newtown, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller"
-            },
-            {
-                        "status": "SOLD",
-                        "price": "$240,000",
-                        "street": "77 Kennedy Drive",
-                        "locality": "Bridgeport, Connecticut",
-                        "specs": [
-                                    "2 Beds",
-                                    "1 Bath",
-                                    "Condo"
-                        ],
-                        "description": "Updated first-floor Candlelight Terrace condo with a granite-and-stainless kitchen, custom shower, private patio, wooded views, community pool and clubhouse.",
-                        "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/77%20Kennedy.webp",
-                        "alt": "77 Kennedy Drive, Bridgeport, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller"
-            },
-            {
-                        "status": "SOLD",
-                        "price": "$190,000",
-                        "street": "24 Stony Brook Drive",
-                        "locality": "Glastonbury, Connecticut",
-                        "specs": [
-                                    "1 Bed",
-                                    "1 Bath",
-                                    "Condo"
-                        ],
-                        "description": "Hale Farms condo with an efficient one-bedroom layout and community amenities including pool and tennis; association services include heat, hot water, water and sewer.",
-                        "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/24%20Stony%20Brook.jpg",
-                        "alt": "24 Stony Brook Drive, Glastonbury, Connecticut",
-                        "placeholder": false,
-                        "represented": "Seller"
             },
             {
                         "status": "SOLD",
@@ -3490,37 +3422,20 @@
             },
             {
                         "status": "SOLD",
-                        "price": "$374,500",
-                        "street": "106 Collelo Avenue",
-                        "locality": "Moosup, Connecticut",
+                        "price": "$615,000",
+                        "street": "16 Pine Tree Hill Road",
+                        "locality": "Newtown, Connecticut",
                         "specs": [
-                                    "3 Beds",
-                                    "2 Baths",
+                                    "4 Beds",
+                                    "3 Baths",
                                     "Single Family"
                         ],
-                        "description": "A 2.7-acre rural retreat with vaulted living space, French doors to a large deck, a pool, fire pit, expansive yard, updated kitchen and flexible lower-level living area.",
+                        "description": "Private Newtown Colonial with an open floor plan, hardwood floors, island kitchen, fireplace, screened porch, deck and in-ground pool on more than two wooded acres.",
                         "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/106%20Collelo.webp",
-                        "alt": "106 Collelo Avenue, Moosup, Connecticut",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/16%20Pine%20Tree%20Hill%20Road.webp",
+                        "alt": "16 Pine Tree Hill Road, Newtown, Connecticut",
                         "placeholder": false,
                         "represented": "Seller"
-            },
-            {
-                        "status": "SOLD",
-                        "price": "$241,000",
-                        "street": "78 Webster Court",
-                        "locality": "Newington, Connecticut",
-                        "specs": [
-                                    "2 Beds",
-                                    "1 Bath",
-                                    "Condo"
-                        ],
-                        "description": "Updated townhouse-style condo with granite counters, stainless appliances, open living and dining space, a private wooded patio and community pool access.",
-                        "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/78%20Webster.jpg",
-                        "alt": "78 Webster Court, Newington, Connecticut",
-                        "placeholder": false,
-                        "represented": "Buyer"
             },
             {
                         "status": "SOLD",
@@ -3558,18 +3473,103 @@
             },
             {
                         "status": "SOLD",
-                        "price": "$167,000",
-                        "street": "186 Prospect Street",
-                        "locality": "Willimantic, Connecticut",
+                        "price": "$374,500",
+                        "street": "106 Collelo Avenue",
+                        "locality": "Moosup, Connecticut",
                         "specs": [
-                                    "6 Beds",
+                                    "3 Beds",
                                     "2 Baths",
                                     "Single Family"
                         ],
-                        "description": "Spacious historic home near ECSU and UConn with flexible living areas, two full baths, a finished third floor and strong rental appeal.",
+                        "description": "A 2.7-acre rural retreat with vaulted living space, French doors to a large deck, a pool, fire pit, expansive yard, updated kitchen and flexible lower-level living area.",
                         "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/186%20Prospect.jpg",
-                        "alt": "186 Prospect Street, Willimantic, Connecticut",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/106%20Collelo.webp",
+                        "alt": "106 Collelo Avenue, Moosup, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$287,000",
+                        "street": "67 Harold Road",
+                        "locality": "Farmington, Connecticut",
+                        "specs": [
+                                    "3 Beds",
+                                    "1 Bath",
+                                    "Single Family"
+                        ],
+                        "description": "Raised-ranch renovation opportunity on a low-traffic street with a two-car garage, rough-plumbed unfinished basement and a large, level yard.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/3f9546e231a79156960982fa4680a2f5753a150a/Property%20Photos/harold.png",
+                        "alt": "67 Harold Road, Farmington, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$241,000",
+                        "street": "78 Webster Court",
+                        "locality": "Newington, Connecticut",
+                        "specs": [
+                                    "2 Beds",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Updated townhouse-style condo with granite counters, stainless appliances, open living and dining space, a private wooded patio and community pool access.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/78%20Webster.jpg",
+                        "alt": "78 Webster Court, Newington, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$240,000",
+                        "street": "77 Kennedy Drive",
+                        "locality": "Bridgeport, Connecticut",
+                        "specs": [
+                                    "2 Beds",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Updated first-floor Candlelight Terrace condo with a granite-and-stainless kitchen, custom shower, private patio, wooded views, community pool and clubhouse.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/77%20Kennedy.webp",
+                        "alt": "77 Kennedy Drive, Bridgeport, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$195,000",
+                        "street": "72 Prospect Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "2 Family"
+                        ],
+                        "description": "Updated Hill Section two-family Victorian with stained-glass detail, vaulted architectural accents, two porches, a garage and convenient access to ECSU and UConn.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/72%20Prospect.webp",
+                        "alt": "72 Prospect Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$190,000",
+                        "street": "24 Stony Brook Drive",
+                        "locality": "Glastonbury, Connecticut",
+                        "specs": [
+                                    "1 Bed",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Hale Farms condo with an efficient one-bedroom layout and community amenities including pool and tennis; association services include heat, hot water, water and sewer.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/24%20Stony%20Brook.jpg",
+                        "alt": "24 Stony Brook Drive, Glastonbury, Connecticut",
                         "placeholder": false,
                         "represented": "Seller"
             },
@@ -3592,42 +3592,24 @@
             },
             {
                         "status": "SOLD",
-                        "price": "$195,000",
-                        "street": "72 Prospect Street",
+                        "price": "$167,000",
+                        "street": "186 Prospect Street",
                         "locality": "Willimantic, Connecticut",
                         "specs": [
-                                    "8 Beds",
-                                    "3 Baths",
-                                    "2 Family"
+                                    "6 Beds",
+                                    "2 Baths",
+                                    "Single Family"
                         ],
-                        "description": "Updated Hill Section two-family Victorian with stained-glass detail, vaulted architectural accents, two porches, a garage and convenient access to ECSU and UConn.",
+                        "description": "Spacious historic home near ECSU and UConn with flexible living areas, two full baths, a finished third floor and strong rental appeal.",
                         "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/72%20Prospect.webp",
-                        "alt": "72 Prospect Street, Willimantic, Connecticut",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/186%20Prospect.jpg",
+                        "alt": "186 Prospect Street, Willimantic, Connecticut",
                         "placeholder": false,
                         "represented": "Seller"
             }
 ];
 
         const rentalTransactions = [
-            {
-                        "status": "FOR RENT",
-                        "price": "$1,995/mo",
-                        "street": "30 Candlewood Drive #30",
-                        "locality": "South Windsor, Connecticut",
-                        "specs": [
-                                    "2 Beds",
-                                    "2 Baths",
-                                    "1,038 SF"
-                        ],
-                        "description": "Ranch-style end-unit condo with wooded views, granite and stainless kitchen, private balcony, split-system heating and cooling, pool, clubhouse, and reserved parking.",
-                        "mediaType": "image",
-                        "alt": "30 Candlewood Drive #30, South Windsor, Connecticut",
-                        "placeholder": false,
-                        "represented": "Landlord",
-                        "listingUrl": "https://www.raveis.com/prop/24212215/30-candlewood-drive-south-windsor-ct-06074",
-                        "mediaSrc": "https://m.cbhomes.com/p/229/24212215/f185079b1ef1462/pds23tp.webp"
-            },
             {
                         "status": "FOR RENT",
                         "price": "$3,950/mo",
@@ -3698,7 +3680,25 @@
                         "placeholder": false,
                         "represented": "Landlord",
                         "listingUrl": "https://www.coldwellbankerhomes.com/ct/west-hartford/118-cambridge-st-2/pid_73938228/",
-                        "mediaSrc": "https://api.microlink.io/?url=https%3A%2F%2Fwww.coldwellbankerhomes.com%2Fct%2Fwest-hartford%2F118-cambridge-st-2%2Fpid_73938228%2F&embed=image.url"
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/40e4201152f6a46ded63f0c22363973a-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR RENT",
+                        "price": "$1,995/mo",
+                        "street": "30 Candlewood Drive #30",
+                        "locality": "South Windsor, Connecticut",
+                        "specs": [
+                                    "2 Beds",
+                                    "2 Baths",
+                                    "1,038 SF"
+                        ],
+                        "description": "Ranch-style end-unit condo with wooded views, granite and stainless kitchen, private balcony, split-system heating and cooling, pool, clubhouse, and reserved parking.",
+                        "mediaType": "image",
+                        "alt": "30 Candlewood Drive #30, South Windsor, Connecticut",
+                        "placeholder": false,
+                        "represented": "Landlord",
+                        "listingUrl": "https://www.raveis.com/prop/24212215/30-candlewood-drive-south-windsor-ct-06074",
+                        "mediaSrc": "https://api.microlink.io/?url=https%3A%2F%2Fwww.zillow.com%2Fb%2F30-candlewood-dr-south-windsor-ct-96kszZ%2F&embed=image.url"
             },
             {
                         "status": "RENTED",
