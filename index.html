@@ -3259,6 +3259,10 @@
          * Sales shows active listings ordered from highest to lowest price, followed by sold listings ordered from highest to lowest price.
          * Rentals shows active listings ordered from highest to lowest rent, followed by completed rental transactions.
          */
+        /*
+         * Active sale photos below are the current lead images from each
+         * property's active Zillow posting, verified October 20, 2026.
+         */
         const salesTransactions = [
             {
                         "status": "FOR SALE",
@@ -3293,7 +3297,7 @@
                         "alt": "217 Alden Avenue, New Haven, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213936/217-alden-avenue-new-haven-ct-06515",
+                        "listingUrl": "https://www.zillow.com/homedetails/217-Alden-Ave-New-Haven-CT-06515/57972207_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/3e446ef84f0cc831423259aa088f996e-cc_ft_960.jpg"
             },
             {
@@ -3311,7 +3315,7 @@
                         "alt": "39-41 Anthony Street, New Haven, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213941/39-41-anthony-street-new-haven-ct-06515",
+                        "listingUrl": "https://www.zillow.com/homedetails/39-41-Anthony-St-New-Haven-CT-06515/465953853_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/617110af8ac335f4f446094d15fa10b1-cc_ft_960.jpg"
             },
             {
@@ -3329,7 +3333,7 @@
                         "alt": "53 Orlando Street, West Haven, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24213933/53-orlando-street-west-haven-ct-06516",
+                        "listingUrl": "https://www.zillow.com/homedetails/53-Orlando-St-West-Haven-CT-06516/58036521_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/d6cf8e9ebe765baec850d0cbf96e717b-cc_ft_960.jpg"
             },
             {
@@ -3347,7 +3351,7 @@
                         "alt": "44 Dudley Street, Hamden, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid",
+                        "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/702a04d41e653f612ebbae55061a1d60-cc_ft_960.jpg"
             },
             {
@@ -3365,7 +3369,7 @@
                         "alt": "11 Dorman Street, New Haven, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.redfin.com/CT/New-Haven/11-Dorman-St-06511/home/54291944",
+                        "listingUrl": "https://www.zillow.com/homedetails/11-Dorman-St-New-Haven-CT-06511/57969729_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/c2ddfdd9746cb16f3b308c505b700f5f-cc_ft_960.jpg"
             },
             {
@@ -3383,7 +3387,7 @@
                         "alt": "80 Contour Drive, Cheshire, Connecticut",
                         "placeholder": false,
                         "represented": "Seller",
-                        "listingUrl": "https://www.raveis.com/prop/24207039/80-contour-drive-cheshire-ct-06410",
+                        "listingUrl": "https://www.zillow.com/homedetails/80-Contour-Dr-Cheshire-CT-06410/57896231_zpid/",
                         "mediaSrc": "https://photos.zillowstatic.com/fp/c9812cf0561de0cabec66588a08edda0-cc_ft_960.jpg"
             },
             {
@@ -3825,10 +3829,13 @@
                         alt="${escapeHTML(transaction.alt || "")}"
                         loading="${
                             transaction.status === "FOR SALE" ||
-                            transaction.status === "FOR RENT"
+                            transaction.status === "FOR RENT" ||
+                            transaction.status === "UNDER CONTRACT"
                                 ? "eager"
                                 : "lazy"
                         }"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
                         onerror="
                             this.onerror = null;
                             this.outerHTML =
