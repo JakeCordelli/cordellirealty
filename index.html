@@ -43,66 +43,59 @@
         (() => {
             "use strict";
 
-            const storageKey = "cordelli-realty-theme";
             const root = document.documentElement;
-            const systemThemeQuery = typeof window.matchMedia === "function"
-                ? window.matchMedia("(prefers-color-scheme: dark)")
-                : null;
             let themeToggle = null;
+            let currentTheme = "light";
 
-            const readSavedTheme = () => {
-                try {
-                    const saved = window.localStorage.getItem(storageKey);
-                    return saved === "dark" || saved === "light" ? saved : null;
-                } catch (error) {
-                    return null;
-                }
-            };
-
-            // Only an explicit toggle selection is saved. A first-time visitor,
-            // or a visitor without a valid saved selection, follows their device.
-            let manualTheme = readSavedTheme();
-
-            const resolveTheme = () => manualTheme || (
-                systemThemeQuery && systemThemeQuery.matches ? "dark" : "light"
-            );
+            try {
+                window.localStorage.removeItem("cordelli-realty-theme");
+            } catch (error) {
+                // No persisted preference is required.
+            }
 
             const applyTheme = () => {
-                const theme = resolveTheme();
-                const isDark = theme === "dark";
+                const isDark = currentTheme === "dark";
 
-                root.dataset.theme = theme;
-                root.dataset.themePreference = manualTheme || "system";
-                root.style.colorScheme = theme;
+                root.dataset.theme = currentTheme;
+                root.dataset.themePreference = "session";
+                root.style.colorScheme = currentTheme;
 
-                const themeColorMeta = document.getElementById("theme-color-meta");
+                const themeColorMeta =
+                    document.getElementById("theme-color-meta");
+
                 if (themeColorMeta) {
-                    themeColorMeta.content = isDark ? "#17191e" : "#f7f7f8";
+                    themeColorMeta.content = isDark
+                        ? "#17191e"
+                        : "#f7f7f8";
                 }
 
                 if (themeToggle) {
-                    themeToggle.setAttribute("aria-pressed", String(isDark));
+                    themeToggle.setAttribute(
+                        "aria-pressed",
+                        String(isDark)
+                    );
+
                     themeToggle.title = isDark
                         ? "Switch to light mode"
                         : "Switch to night mode";
                 }
             };
 
-            // Apply before the stylesheet/body to avoid starting in the wrong theme.
             applyTheme();
 
             const connectToggle = () => {
-                themeToggle = document.getElementById("theme-toggle");
-                if (!themeToggle) return;
+                themeToggle =
+                    document.getElementById("theme-toggle");
+
+                if (!themeToggle) {
+                    return;
+                }
 
                 themeToggle.addEventListener("click", () => {
-                    manualTheme = resolveTheme() === "dark" ? "light" : "dark";
-
-                    try {
-                        window.localStorage.setItem(storageKey, manualTheme);
-                    } catch (error) {
-                        // Retain the manual choice in memory if storage is unavailable.
-                    }
+                    currentTheme =
+                        currentTheme === "dark"
+                            ? "light"
+                            : "dark";
 
                     applyTheme();
                 });
@@ -111,34 +104,17 @@
             };
 
             if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", connectToggle, {
-                    once: true
-                });
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    connectToggle,
+                    { once: true }
+                );
             } else {
                 connectToggle();
             }
 
-            // Follow preference changes live until the visitor selects an override.
-            const handleSystemThemeChange = () => {
-                if (manualTheme === null) applyTheme();
-            };
-
-            if (systemThemeQuery) {
-                if (typeof systemThemeQuery.addEventListener === "function") {
-                    systemThemeQuery.addEventListener("change", handleSystemThemeChange);
-                } else if (typeof systemThemeQuery.addListener === "function") {
-                    systemThemeQuery.addListener(handleSystemThemeChange);
-                }
-            }
-
-            // Recheck the current device preference after a cached page is restored.
-            // A saved manual override still takes precedence.
-            window.addEventListener("pageshow", applyTheme);
-
-            // Keep tabs in sync; clearing the saved preference returns to system mode.
-            window.addEventListener("storage", (event) => {
-                if (event.key !== storageKey && event.key !== null) return;
-                manualTheme = readSavedTheme();
+            window.addEventListener("pageshow", () => {
+                currentTheme = "light";
                 applyTheme();
             });
         })();
@@ -547,8 +523,8 @@
             }
 
             .portrait-frame {
-                width: 250px;
-                height: 250px;
+                width: 142px;
+                height: 142px;
             }
 
             h1 {
@@ -594,8 +570,8 @@
             }
 
             .portrait-frame {
-                width: 250px;
-                height: 250px;
+                width: 126px;
+                height: 126px;
                 box-shadow: 0 6px 18px rgba(36, 36, 38, 0.06);
             }
 
@@ -2974,6 +2950,15 @@
             }
         }
 
+
+        /* Fixed 200 × 200 profile portrait */
+        .portrait-frame {
+            width: 200px !important;
+            height: 200px !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
     </style>
 </head>
 
@@ -3025,8 +3010,8 @@
                 <img
                     src="https://raw.githubusercontent.com/JakeCordelli/cordellirealty/main/me.png"
                     alt="Jake Cordelli"
-                    width="500"
-                    height="500"
+                    width="200"
+                    height="200"
                     decoding="async"
                     fetchpriority="high"
                 >
@@ -3039,8 +3024,8 @@
 
             <div class="credentials">
                 <div class="credential">Connecticut Real Estate Broker</div>
-                <div class="credential">Commercial & Residential</div>
                 <div class="credential">Founded &amp; Owned by Jake Cordelli</div>
+                <div class="credential">Commercial &amp; Residential Sales</div>
             </div>
         </section>
 
