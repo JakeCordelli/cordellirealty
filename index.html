@@ -3169,6 +3169,249 @@
             }
         }
 
+
+
+        /* Accessible About Jake dropdown */
+        .about-dropdown {
+            width: 100%;
+            max-width: 360px;
+            margin: 1px auto 2px;
+            overflow: hidden;
+            border: 1px solid rgba(40, 40, 45, 0.11);
+            border-radius: 14px;
+            background: var(--card-bg);
+            color: var(--text);
+            text-align: left;
+        }
+
+        .about-dropdown summary {
+            min-height: 48px;
+            padding: 10px 13px;
+            cursor: pointer;
+            list-style: none;
+            -webkit-tap-highlight-color: transparent;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .about-dropdown summary:focus-visible {
+            outline: 3px solid rgba(64, 142, 255, 0.34);
+            outline-offset: -3px;
+            border-radius: 13px;
+        }
+
+        .about-summary-copy {
+            min-width: 0;
+        }
+
+        .about-summary-title {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: 0.035rem;
+        }
+
+        .about-summary-subtitle {
+            margin-top: 3px;
+            overflow: hidden;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: 0.015rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .about-chevron {
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(40, 40, 45, 0.11);
+            border-radius: 50%;
+            color: var(--text);
+            background: rgba(40, 40, 45, 0.025);
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            transition:
+                transform 220ms ease,
+                background-color 220ms ease,
+                border-color 220ms ease;
+        }
+
+        .about-chevron svg {
+            width: 15px;
+            height: 15px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .about-dropdown[open] .about-chevron {
+            transform: rotate(180deg);
+        }
+
+        .about-dropdown[open] summary {
+            border-bottom: 1px solid rgba(40, 40, 45, 0.09);
+        }
+
+        .about-content {
+            padding: 14px 14px 15px;
+        }
+
+        .about-intro {
+            color: rgba(40, 40, 45, 0.82);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.58;
+            letter-spacing: 0.012rem;
+        }
+
+        .about-promises {
+            display: grid;
+            gap: 7px;
+            margin-top: 13px;
+        }
+
+        .about-promise {
+            padding: 9px 10px;
+            border-left: 2px solid rgba(64, 142, 255, 0.52);
+            border-radius: 0 9px 9px 0;
+            background: rgba(64, 142, 255, 0.045);
+            color: rgba(40, 40, 45, 0.80);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.45;
+            letter-spacing: 0.008rem;
+        }
+
+        .about-promise strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-section-label {
+            margin: 16px 0 5px;
+            color: #315f93;
+            font-size: 13px;
+            font-weight: 650;
+            line-height: 1;
+            letter-spacing: 0.10rem;
+            text-transform: uppercase;
+        }
+
+        .about-highlights {
+            display: grid;
+        }
+
+        .about-highlight {
+            display: grid;
+            grid-template-columns: 25px minmax(0, 1fr);
+            gap: 9px;
+            padding: 10px 0;
+            border-top: 1px solid rgba(40, 40, 45, 0.09);
+        }
+
+        .about-highlight:first-child {
+            border-top: 0;
+        }
+
+        .about-number {
+            color: #a68e63;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+
+        .about-highlight-title {
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.25;
+            letter-spacing: 0.005rem;
+        }
+
+        .about-highlight-copy {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.48;
+            letter-spacing: 0.008rem;
+        }
+
+        .about-contact-note {
+            margin-top: 4px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(40, 40, 45, 0.09);
+            color: rgba(40, 40, 45, 0.76);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: 0.008rem;
+            text-align: center;
+        }
+
+        html[data-theme="dark"] .about-dropdown {
+            border-color: rgba(255, 255, 255, 0.11);
+            background: var(--card-bg);
+        }
+
+        html[data-theme="dark"] .about-dropdown[open] summary,
+        html[data-theme="dark"] .about-highlight,
+        html[data-theme="dark"] .about-contact-note {
+            border-color: rgba(255, 255, 255, 0.10);
+        }
+
+        html[data-theme="dark"] .about-chevron {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        html[data-theme="dark"] .about-intro,
+        html[data-theme="dark"] .about-promise,
+        html[data-theme="dark"] .about-contact-note {
+            color: rgba(231, 228, 220, 0.80);
+        }
+
+        html[data-theme="dark"] .about-promise {
+            border-left-color: rgba(114, 173, 255, 0.58);
+            background: rgba(114, 173, 255, 0.07);
+        }
+
+        html[data-theme="dark"] .about-section-label {
+            color: #9bc5f3;
+        }
+
+        html[data-theme="dark"] .about-number {
+            color: #c8ad7b;
+        }
+
+        @media (max-height: 750px) {
+            .about-dropdown summary {
+                min-height: 44px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            .about-content {
+                padding-top: 12px;
+                padding-bottom: 13px;
+            }
+        }
+
     </style>
 </head>
 
@@ -3238,6 +3481,117 @@
                 <div class="credential">Commercial &amp; Residential Sales</div>
             </div>
         </section>
+
+
+
+        <details class="about-dropdown">
+            <summary>
+                <span class="about-summary-copy">
+                    <span class="about-summary-title">About Jake</span>
+                    <span class="about-summary-subtitle">Background, experience &amp; client approach</span>
+                </span>
+
+                <span class="about-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </span>
+            </summary>
+
+            <div class="about-content">
+                <p class="about-intro">
+                    I’m Jake Cordelli, a licensed real estate broker in Connecticut
+                    and the founder and owner of Cordelli Realty. I help clients reach
+                    their real estate goals through buying, selling, and leasing
+                    residential and commercial property.
+                </p>
+
+                <div class="about-promises" aria-label="Client commitments">
+                    <div class="about-promise">
+                        <strong>Expertise You Can Trust:</strong>
+                        Clear, practical guidance designed to help clients make
+                        informed decisions and protect their financial position.
+                    </div>
+
+                    <div class="about-promise">
+                        <strong>Dedication to Excellence:</strong>
+                        Diligent, persistent representation from the first
+                        conversation through closing.
+                    </div>
+
+                    <div class="about-promise">
+                        <strong>Undivided Attention:</strong>
+                        I intentionally work with a limited number of clients so
+                        every assignment receives direct, owner-level focus.
+                    </div>
+                </div>
+
+                <div class="about-section-label">Background</div>
+
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <div class="about-number">1</div>
+                        <div>
+                            <div class="about-highlight-title">Former Sotheby’s agent</div>
+                            <div class="about-highlight-copy">
+                                Luxury-brand training and presentation standards
+                                brought into a boutique, owner-led real estate process.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlight">
+                        <div class="about-number">2</div>
+                        <div>
+                            <div class="about-highlight-title">Million-dollar-plus sale history</div>
+                            <div class="about-highlight-copy">
+                                Experience positioning and negotiating higher-value
+                                properties where presentation and buyer confidence
+                                matter. $1.8M highest sale.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlight">
+                        <div class="about-number">3</div>
+                        <div>
+                            <div class="about-highlight-title">Residential + commercial experience</div>
+                            <div class="about-highlight-copy">
+                                A broader view of pricing, property use, negotiation,
+                                and deal structure across asset types.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlight">
+                        <div class="about-number">4</div>
+                        <div>
+                            <div class="about-highlight-title">Computer science degree</div>
+                            <div class="about-highlight-copy">
+                                A data-driven mindset for pricing, lead tracking,
+                                online presentation, and organized follow-up.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-highlight">
+                        <div class="about-number">5</div>
+                        <div>
+                            <div class="about-highlight-title">Professional real estate photographer</div>
+                            <div class="about-highlight-copy">
+                                Hands-on understanding of composition, light, editing,
+                                and the visual details that shape first impressions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="about-contact-note">
+                    With me, you’re partnering directly with a committed broker-owner.
+                    Feel free to call, text, or email anytime.
+                </p>
+            </div>
+        </details>
 
         <section class="sales-metrics" aria-label="Sales metrics">
             <div class="sales-metric">
