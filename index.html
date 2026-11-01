@@ -417,7 +417,7 @@
         .listing-city { margin-top: 3px; color: var(--muted); font-size: 0.72rem; }
         .listing-price { color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 1rem; font-weight: 700; white-space: nowrap; }
         .listing-specs { margin-top: 13px; color: var(--muted); font-size: 0.70rem; line-height: 1.5; }
-        .listing-description { margin: 12px 0 0; color: var(--ink-soft); font-size: 0.74rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .listing-description { margin: 12px 0 0; color: var(--ink-soft); font-size: 0.74rem; line-height: 1.5; display: block; overflow: visible; -webkit-line-clamp: unset; -webkit-box-orient: initial; }
         .listing-link {
             margin-top: auto;
             padding-top: 14px;
@@ -973,6 +973,20 @@
             }
         }
 
+
+        /* Full property descriptions with aligned card bottoms */
+        .listing-track {
+            align-items: stretch;
+        }
+
+        .listing-card {
+            height: auto;
+        }
+
+        .listing-body {
+            height: 100%;
+        }
+
 </style>
 </head>
 <body>
@@ -1511,7 +1525,7 @@
                         ],
                         "description": "Grand seven-unit Victorian with large windows, original molding, a covered porch, off-street parking and varied apartment layouts near ECSU and Windham Hospital.",
                         "mediaType": "image",
-                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/150%20North.jpg",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f90caf82b8b638a50e3b5479416413afd98bd767/Property%20Photos/150%20North%20Street.png",
                         "alt": "150 North Street, Willimantic, Connecticut",
                         "placeholder": false,
                         "represented": "Seller"
