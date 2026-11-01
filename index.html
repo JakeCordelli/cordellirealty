@@ -1304,7 +1304,355 @@
     </footer>
 
     <script>
-        const salesTransactions = [{"status": "UNDER CONTRACT", "price": "$775,000", "street": "52 Stonewall Road", "locality": "Salem, Connecticut", "specs": ["5 Beds", "4.5 Baths", "3,263 SF"], "description": "Custom Fieldstone Farms Colonial on approximately two landscaped acres with a first-floor primary suite, finished walkout lower-level apartment, office, and three-car garage.", "mediaType": "image", "alt": "52 Stonewall Road, Salem, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/52-Stonewall-Rd-Salem-CT-06420/80398182_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/5ea56f8bc00345691fffaf1113debbbe-cc_ft_1344.webp"}, {"status": "FOR SALE", "price": "$750,000", "street": "217 Alden Avenue", "locality": "New Haven, Connecticut", "specs": ["7 Beds", "3.5 Baths", "2,593 SF"], "description": "Westville two-family offering seven total bedrooms, updated interiors, generous living space, a covered sun porch, private yard, and convenient access to universities and Downtown.", "mediaType": "image", "alt": "217 Alden Avenue, New Haven, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/217-Alden-Ave-New-Haven-CT-06515/57972207_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/3e446ef84f0cc831423259aa088f996e-cc_ft_960.jpg"}, {"status": "FOR SALE", "price": "$650,000", "street": "39-41 Anthony Street", "locality": "New Haven, Connecticut", "specs": ["7 Beds", "3 Baths", "3,262 SF"], "description": "Desirable three-family property with updated units, hardwood floors, stainless steel appliances, off-street parking, and convenient access to Westville and area amenities.", "mediaType": "image", "alt": "39-41 Anthony Street, New Haven, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/39-41-Anthony-St-New-Haven-CT-06515/465953853_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/e9314f3d47fc40ee43399f42d5e95d24-cc_ft_1344.webp"}, {"status": "FOR SALE", "price": "$570,000", "street": "53 Orlando Street", "locality": "West Haven, Connecticut", "specs": ["8 Beds", "3 Baths", "2,768 SF"], "description": "Updated three-family investment property near the University of New Haven with central air, granite counters, stainless appliances, flexible office space, and off-street parking.", "mediaType": "image", "alt": "53 Orlando Street, West Haven, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/53-Orlando-St-West-Haven-CT-06516/58036521_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/d6cf8e9ebe765baec850d0cbf96e717b-cc_ft_960.jpg"}, {"status": "FOR SALE", "price": "$510,000", "street": "44 Dudley Street", "locality": "Hamden, Connecticut", "specs": ["7 Beds", "3 Baths", "3 Family"], "description": "Flexible three-family property with hardwood floors, stainless steel appliances, private outdoor space, off-street parking, and convenient access to New Haven-area universities.", "mediaType": "image", "alt": "44 Dudley Street, Hamden, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/702a04d41e653f612ebbae55061a1d60-cc_ft_960.jpg"}, {"status": "UNDER CONTRACT", "price": "$470,000", "street": "11 Dorman Street", "locality": "New Haven, Connecticut", "specs": ["8 Beds", "3 Baths", "3,171 SF"], "description": "Three-family investment or owner-occupant opportunity with three spacious apartments and convenient access to Downtown New Haven, universities, major employers, shopping, transit, and highways.", "mediaType": "image", "alt": "11 Dorman Street, New Haven, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/11-Dorman-St-New-Haven-CT-06511/57969729_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/c2ddfdd9746cb16f3b308c505b700f5f-cc_ft_960.jpg"}, {"status": "SOLD", "price": "$1,800,000", "street": "6448 Main Street", "locality": "Trumbull, Connecticut", "specs": ["274 Beds", "178K SF", "Healthcare"], "description": "Off-market sale and acquisition of the former St. Joseph's Center, a large Trumbull healthcare property previously used for nursing, skilled nursing and rehabilitation services.", "mediaType": "image", "mediaSrc": "https://github.com/JakeCordelli/cordellirealty/blob/2e209674dd40f7f1a01a3f517ed3a19a0a55e46c/Property%20Photos/6448%20Main.jpg", "alt": "6448 Main Street, Trumbull, Connecticut", "placeholder": false, "represented": "Buyer & Seller"}, {"status": "SOLD", "price": "$1,200,000", "street": "19-29 Chestnut Street", "locality": "Willimantic, Connecticut", "specs": ["38 Beds", "11 Baths", "11 Family"], "description": "Turnkey 11-unit rental compound near ECSU and UConn with 38 bedrooms across two apartment buildings and a single-family home, plus off-street parking and additional income space.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/19-29%20Chestnut.jpg", "alt": "19-29 Chestnut Street, Willimantic, Connecticut", "placeholder": false, "represented": "Buyer & Seller"}, {"status": "SOLD", "price": "$615,000", "street": "16 Pine Tree Hill Road", "locality": "Newtown, Connecticut", "specs": ["4 Beds", "3 Baths", "Single Family"], "description": "Private Newtown Colonial with an open floor plan, hardwood floors, island kitchen, fireplace, screened porch, deck and in-ground pool on more than two wooded acres.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/16%20Pine%20Tree%20Hill%20Road.webp", "alt": "16 Pine Tree Hill Road, Newtown, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$540,000", "street": "15 Sachems Trail", "locality": "Simsbury, Connecticut", "specs": ["4 Beds", "3 Baths", "Single Family"], "description": "Private cul-de-sac home on more than an acre beside protected land, with a fireplace, finished lower level, sunroom with hot tub, two-car garage and heated studio.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/15%20Sachems.jpg", "alt": "15 Sachems Trail, Simsbury, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$469,500", "street": "80 Contour Drive", "locality": "Cheshire, Connecticut", "specs": ["3 Beds", "2 Baths", "1,144 SF"], "description": "Move-in-ready one-level ranch with hardwood floors, an updated kitchen and breakfast bar, main-level laundry, a fenced backyard, and extensive system updates.", "mediaType": "image", "alt": "80 Contour Drive, Cheshire, Connecticut", "placeholder": false, "represented": "Seller", "listingUrl": "https://www.zillow.com/homedetails/80-Contour-Dr-Cheshire-CT-06410/57896231_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/c9812cf0561de0cabec66588a08edda0-cc_ft_960.jpg"}, {"status": "SOLD", "price": "$420,000", "street": "150 North Street", "locality": "Willimantic, Connecticut", "specs": ["14 Beds", "7 Baths", "7 Family"], "description": "Grand seven-unit Victorian with large windows, original molding, a covered porch, off-street parking and varied apartment layouts near ECSU and Windham Hospital.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/150%20North.jpg", "alt": "150 North Street, Willimantic, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$374,500", "street": "106 Collelo Avenue", "locality": "Moosup, Connecticut", "specs": ["3 Beds", "2 Baths", "Single Family"], "description": "A 2.7-acre rural retreat with vaulted living space, French doors to a large deck, a pool, fire pit, expansive yard, updated kitchen and flexible lower-level living area.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/106%20Collelo.webp", "alt": "106 Collelo Avenue, Moosup, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$287,000", "street": "67 Harold Road", "locality": "Farmington, Connecticut", "specs": ["3 Beds", "1 Bath", "Single Family"], "description": "Raised-ranch renovation opportunity on a low-traffic street with a two-car garage, rough-plumbed unfinished basement and a large, level yard.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/3f9546e231a79156960982fa4680a2f5753a150a/Property%20Photos/harold.png", "alt": "67 Harold Road, Farmington, Connecticut", "placeholder": false, "represented": "Buyer"}, {"status": "SOLD", "price": "$241,000", "street": "78 Webster Court", "locality": "Newington, Connecticut", "specs": ["2 Beds", "1 Bath", "Condo"], "description": "Updated townhouse-style condo with granite counters, stainless appliances, open living and dining space, a private wooded patio and community pool access.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/78%20Webster.jpg", "alt": "78 Webster Court, Newington, Connecticut", "placeholder": false, "represented": "Buyer"}, {"status": "SOLD", "price": "$240,000", "street": "77 Kennedy Drive", "locality": "Bridgeport, Connecticut", "specs": ["2 Beds", "1 Bath", "Condo"], "description": "Updated first-floor Candlelight Terrace condo with a granite-and-stainless kitchen, custom shower, private patio, wooded views, community pool and clubhouse.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/77%20Kennedy.webp", "alt": "77 Kennedy Drive, Bridgeport, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$195,000", "street": "72 Prospect Street", "locality": "Willimantic, Connecticut", "specs": ["8 Beds", "3 Baths", "2 Family"], "description": "Updated Hill Section two-family Victorian with stained-glass detail, vaulted architectural accents, two porches, a garage and convenient access to ECSU and UConn.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/72%20Prospect.webp", "alt": "72 Prospect Street, Willimantic, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$190,000", "street": "24 Stony Brook Drive", "locality": "Glastonbury, Connecticut", "specs": ["1 Bed", "1 Bath", "Condo"], "description": "Hale Farms condo with an efficient one-bedroom layout and community amenities including pool and tennis; association services include heat, hot water, water and sewer.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/24%20Stony%20Brook.jpg", "alt": "24 Stony Brook Drive, Glastonbury, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$180,000", "street": "262 Church Street", "locality": "Willimantic, Connecticut", "specs": ["4 Beds", "2 Baths", "Single Family"], "description": "Hill Section Dutch Colonial with an updated kitchen, fireplace, finished attic, sunroom, perennial garden, private patio and garage.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/262%20Church.jpg", "alt": "262 Church Street, Willimantic, Connecticut", "placeholder": false, "represented": "Seller"}, {"status": "SOLD", "price": "$167,000", "street": "186 Prospect Street", "locality": "Willimantic, Connecticut", "specs": ["6 Beds", "2 Baths", "Single Family"], "description": "Spacious historic home near ECSU and UConn with flexible living areas, two full baths, a finished third floor and strong rental appeal.", "mediaType": "image", "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/186%20Prospect.jpg", "alt": "186 Prospect Street, Willimantic, Connecticut", "placeholder": false, "represented": "Seller"}];
+        const salesTransactions = [
+            {
+                        "status": "UNDER CONTRACT",
+                        "price": "$775,000",
+                        "street": "52 Stonewall Road",
+                        "locality": "Salem, Connecticut",
+                        "specs": [
+                                    "5 Beds",
+                                    "4.5 Baths",
+                                    "3,263 SF"
+                        ],
+                        "description": "Custom Fieldstone Farms Colonial on approximately two landscaped acres with a first-floor primary suite, finished walkout lower-level apartment, office, and three-car garage.",
+                        "mediaType": "image",
+                        "alt": "52 Stonewall Road, Salem, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/52-Stonewall-Rd-Salem-CT-06420/80398182_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/5ea56f8bc00345691fffaf1113debbbe-cc_ft_1344.webp"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$750,000",
+                        "street": "217 Alden Avenue",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3.5 Baths",
+                                    "2,593 SF"
+                        ],
+                        "description": "Westville two-family offering seven total bedrooms, updated interiors, generous living space, a covered sun porch, private yard, and convenient access to universities and Downtown.",
+                        "mediaType": "image",
+                        "alt": "217 Alden Avenue, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/217-Alden-Ave-New-Haven-CT-06515/57972207_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/3e446ef84f0cc831423259aa088f996e-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$650,000",
+                        "street": "39-41 Anthony Street",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3 Baths",
+                                    "3,262 SF"
+                        ],
+                        "description": "Desirable three-family property with updated units, hardwood floors, stainless steel appliances, off-street parking, and convenient access to Westville and area amenities.",
+                        "mediaType": "image",
+                        "alt": "39-41 Anthony Street, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/39-41-Anthony-St-New-Haven-CT-06515/465953853_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/e9314f3d47fc40ee43399f42d5e95d24-cc_ft_1344.webp"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$570,000",
+                        "street": "53 Orlando Street",
+                        "locality": "West Haven, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "2,768 SF"
+                        ],
+                        "description": "Updated three-family investment property near the University of New Haven with central air, granite counters, stainless appliances, flexible office space, and off-street parking.",
+                        "mediaType": "image",
+                        "alt": "53 Orlando Street, West Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/53-Orlando-St-West-Haven-CT-06516/58036521_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/d6cf8e9ebe765baec850d0cbf96e717b-cc_ft_960.jpg"
+            },
+            {
+                        "status": "FOR SALE",
+                        "price": "$510,000",
+                        "street": "44 Dudley Street",
+                        "locality": "Hamden, Connecticut",
+                        "specs": [
+                                    "7 Beds",
+                                    "3 Baths",
+                                    "3 Family"
+                        ],
+                        "description": "Flexible three-family property with hardwood floors, stainless steel appliances, private outdoor space, off-street parking, and convenient access to New Haven-area universities.",
+                        "mediaType": "image",
+                        "alt": "44 Dudley Street, Hamden, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/44-Dudley-St-Hamden-CT-06517/57911347_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/702a04d41e653f612ebbae55061a1d60-cc_ft_960.jpg"
+            },
+            {
+                        "status": "UNDER CONTRACT",
+                        "price": "$470,000",
+                        "street": "11 Dorman Street",
+                        "locality": "New Haven, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "3,171 SF"
+                        ],
+                        "description": "Three-family investment or owner-occupant opportunity with three spacious apartments and convenient access to Downtown New Haven, universities, major employers, shopping, transit, and highways.",
+                        "mediaType": "image",
+                        "alt": "11 Dorman Street, New Haven, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/11-Dorman-St-New-Haven-CT-06511/57969729_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/c2ddfdd9746cb16f3b308c505b700f5f-cc_ft_960.jpg"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$1,800,000",
+                        "street": "6448 Main Street",
+                        "locality": "Trumbull, Connecticut",
+                        "specs": [
+                                    "274 Beds",
+                                    "178K SF",
+                                    "Healthcare"
+                        ],
+                        "description": "Off-market sale and acquisition of the former St. Joseph's Center, a large Trumbull healthcare property previously used for nursing, skilled nursing and rehabilitation services.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/2e209674dd40f7f1a01a3f517ed3a19a0a55e46c/Property%20Photos/6448%20Main.jpg",
+                        "alt": "6448 Main Street, Trumbull, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer & Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$1,200,000",
+                        "street": "19-29 Chestnut Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "38 Beds",
+                                    "11 Baths",
+                                    "11 Family"
+                        ],
+                        "description": "Turnkey 11-unit rental compound near ECSU and UConn with 38 bedrooms across two apartment buildings and a single-family home, plus off-street parking and additional income space.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/19-29%20Chestnut.jpg",
+                        "alt": "19-29 Chestnut Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer & Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$615,000",
+                        "street": "16 Pine Tree Hill Road",
+                        "locality": "Newtown, Connecticut",
+                        "specs": [
+                                    "4 Beds",
+                                    "3 Baths",
+                                    "Single Family"
+                        ],
+                        "description": "Private Newtown Colonial with an open floor plan, hardwood floors, island kitchen, fireplace, screened porch, deck and in-ground pool on more than two wooded acres.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/16%20Pine%20Tree%20Hill%20Road.webp",
+                        "alt": "16 Pine Tree Hill Road, Newtown, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$540,000",
+                        "street": "15 Sachems Trail",
+                        "locality": "Simsbury, Connecticut",
+                        "specs": [
+                                    "4 Beds",
+                                    "3 Baths",
+                                    "Single Family"
+                        ],
+                        "description": "Private cul-de-sac home on more than an acre beside protected land, with a fireplace, finished lower level, sunroom with hot tub, two-car garage and heated studio.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/15%20Sachems.jpg",
+                        "alt": "15 Sachems Trail, Simsbury, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$469,500",
+                        "street": "80 Contour Drive",
+                        "locality": "Cheshire, Connecticut",
+                        "specs": [
+                                    "3 Beds",
+                                    "2 Baths",
+                                    "1,144 SF"
+                        ],
+                        "description": "Move-in-ready one-level ranch with hardwood floors, an updated kitchen and breakfast bar, main-level laundry, a fenced backyard, and extensive system updates.",
+                        "mediaType": "image",
+                        "alt": "80 Contour Drive, Cheshire, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller",
+                        "listingUrl": "https://www.zillow.com/homedetails/80-Contour-Dr-Cheshire-CT-06410/57896231_zpid/",
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/c9812cf0561de0cabec66588a08edda0-cc_ft_960.jpg"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$420,000",
+                        "street": "150 North Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "14 Beds",
+                                    "7 Baths",
+                                    "7 Family"
+                        ],
+                        "description": "Grand seven-unit Victorian with large windows, original molding, a covered porch, off-street parking and varied apartment layouts near ECSU and Windham Hospital.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/150%20North.jpg",
+                        "alt": "150 North Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$374,500",
+                        "street": "106 Collelo Avenue",
+                        "locality": "Moosup, Connecticut",
+                        "specs": [
+                                    "3 Beds",
+                                    "2 Baths",
+                                    "Single Family"
+                        ],
+                        "description": "A 2.7-acre rural retreat with vaulted living space, French doors to a large deck, a pool, fire pit, expansive yard, updated kitchen and flexible lower-level living area.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/106%20Collelo.webp",
+                        "alt": "106 Collelo Avenue, Moosup, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$287,000",
+                        "street": "67 Harold Road",
+                        "locality": "Farmington, Connecticut",
+                        "specs": [
+                                    "3 Beds",
+                                    "1 Bath",
+                                    "Single Family"
+                        ],
+                        "description": "Raised-ranch renovation opportunity on a low-traffic street with a two-car garage, rough-plumbed unfinished basement and a large, level yard.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/3f9546e231a79156960982fa4680a2f5753a150a/Property%20Photos/harold.png",
+                        "alt": "67 Harold Road, Farmington, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$241,000",
+                        "street": "78 Webster Court",
+                        "locality": "Newington, Connecticut",
+                        "specs": [
+                                    "2 Beds",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Updated townhouse-style condo with granite counters, stainless appliances, open living and dining space, a private wooded patio and community pool access.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/78%20Webster.jpg",
+                        "alt": "78 Webster Court, Newington, Connecticut",
+                        "placeholder": false,
+                        "represented": "Buyer"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$240,000",
+                        "street": "77 Kennedy Drive",
+                        "locality": "Bridgeport, Connecticut",
+                        "specs": [
+                                    "2 Beds",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Updated first-floor Candlelight Terrace condo with a granite-and-stainless kitchen, custom shower, private patio, wooded views, community pool and clubhouse.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/77%20Kennedy.webp",
+                        "alt": "77 Kennedy Drive, Bridgeport, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$195,000",
+                        "street": "72 Prospect Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "8 Beds",
+                                    "3 Baths",
+                                    "2 Family"
+                        ],
+                        "description": "Updated Hill Section two-family Victorian with stained-glass detail, vaulted architectural accents, two porches, a garage and convenient access to ECSU and UConn.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/72%20Prospect.webp",
+                        "alt": "72 Prospect Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$190,000",
+                        "street": "24 Stony Brook Drive",
+                        "locality": "Glastonbury, Connecticut",
+                        "specs": [
+                                    "1 Bed",
+                                    "1 Bath",
+                                    "Condo"
+                        ],
+                        "description": "Hale Farms condo with an efficient one-bedroom layout and community amenities including pool and tennis; association services include heat, hot water, water and sewer.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/24%20Stony%20Brook.jpg",
+                        "alt": "24 Stony Brook Drive, Glastonbury, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$180,000",
+                        "street": "262 Church Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "4 Beds",
+                                    "2 Baths",
+                                    "Single Family"
+                        ],
+                        "description": "Hill Section Dutch Colonial with an updated kitchen, fireplace, finished attic, sunroom, perennial garden, private patio and garage.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/262%20Church.jpg",
+                        "alt": "262 Church Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            },
+            {
+                        "status": "SOLD",
+                        "price": "$167,000",
+                        "street": "186 Prospect Street",
+                        "locality": "Willimantic, Connecticut",
+                        "specs": [
+                                    "6 Beds",
+                                    "2 Baths",
+                                    "Single Family"
+                        ],
+                        "description": "Spacious historic home near ECSU and UConn with flexible living areas, two full baths, a finished third floor and strong rental appeal.",
+                        "mediaType": "image",
+                        "mediaSrc": "https://raw.githubusercontent.com/JakeCordelli/cordellirealty/f5bf8621bcac6f979a9abc54fcbd72334970b7ed/Property%20Photos/186%20Prospect.jpg",
+                        "alt": "186 Prospect Street, Willimantic, Connecticut",
+                        "placeholder": false,
+                        "represented": "Seller"
+            }
+];
         const rentalTransactions = [{"status": "FOR RENT", "price": "$3,950/mo", "street": "377 Park Road #2", "locality": "West Hartford, Connecticut", "specs": ["4 Beds", "2 Baths", "2,000 SF"], "description": "Second- and third-floor residence with hardwood floors, bay windows, central air, in-unit laundry, garage parking, and easy access to Park Road and West Hartford Center.", "mediaType": "image", "alt": "377 Park Road #2, West Hartford, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.raveis.com/prop/24211656/377-park-road-west-hartford-ct-06119", "mediaSrc": "https://photos.zillowstatic.com/fp/7ee785f0faba35027a17fdf2c1b181bf-cc_ft_960.jpg"}, {"status": "FOR RENT", "price": "$2,400/mo", "street": "316 Shore Drive", "locality": "Coventry, Connecticut", "specs": ["3 Beds", "1 Bath", "1,096 SF"], "description": "Fully furnished Coventry Lake home with in-unit laundry, furnished bedrooms, a spacious deck and yard, ample parking, and nearby beach and waterfront access.", "mediaType": "image", "alt": "316 Shore Drive, Coventry, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.zillow.com/homedetails/316-Shore-Dr-Coventry-CT-06238/58991233_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/0e61747770705e4bb14b9a101d6a367b-cc_ft_960.jpg"}, {"status": "FOR RENT", "price": "$2,400/mo", "street": "65 Sefton Drive — Floor 1", "locality": "New Britain, Connecticut", "specs": ["3 Beds", "1 Bath", "1,015 SF"], "description": "First-floor apartment near CCSU with hardwood floors, dishwasher, basement storage, shared laundry, off-street parking, and convenient access to shopping and major routes.", "mediaType": "image", "alt": "65 Sefton Drive — Floor 1, New Britain, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.zillow.com/homedetails/65-Sefton-Dr-FLOOR-1-New-Britain-CT-06053/2066977959_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/5b67af550ef753fe98dabd30196ba3c3-cc_ft_960.jpg"}, {"status": "FOR RENT", "price": "$2,050/mo", "street": "118 Cambridge Street #2", "locality": "West Hartford, Connecticut", "specs": ["2 Beds", "1 Bath", "700 SF"], "description": "Character-filled apartment with hardwood floors, generous natural light, an enclosed porch, dishwasher, off-street parking, laundry hookups, outdoor space, and attic storage.", "mediaType": "image", "alt": "118 Cambridge Street Unit 2, West Hartford, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.coldwellbankerhomes.com/ct/west-hartford/118-cambridge-st-2/pid_73938228/", "mediaSrc": "https://photos.zillowstatic.com/fp/40e4201152f6a46ded63f0c22363973a-cc_ft_960.jpg"}, {"status": "FOR RENT", "price": "$1,995/mo", "street": "30 Candlewood Drive #30", "locality": "South Windsor, Connecticut", "specs": ["2 Beds", "2 Baths", "1,038 SF"], "description": "Ranch-style end-unit condo with wooded views, granite and stainless kitchen, private balcony, split-system heating and cooling, pool, clubhouse, and reserved parking.", "mediaType": "image", "alt": "30 Candlewood Drive #30, South Windsor, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.raveis.com/prop/24212215/30-candlewood-drive-south-windsor-ct-06074", "mediaSrc": "https://api.microlink.io/?url=https%3A%2F%2Fwww.zillow.com%2Fb%2F30-candlewood-dr-south-windsor-ct-96kszZ%2F&embed=image.url"}, {"status": "RENTED", "price": "$1,600/mo", "street": "41 Spring Street #A", "locality": "Willimantic, Connecticut", "specs": ["2 Beds", "1 Bath", "Apartment"], "description": "Updated apartment near ECSU and Main Street with a large kitchen, dishwasher, spacious bedrooms, outdoor porch and yard access, and private off-street parking.", "mediaType": "image", "alt": "41 Spring Street #A, Willimantic, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.zillow.com/homedetails/41-Spring-St-A-Willimantic-CT-06226/465275299_zpid/", "mediaSrc": "https://photos.zillowstatic.com/fp/3252e2ab83a6b7f78a2b4c485647dbe8-cc_ft_960.jpg"}, {"status": "RENTED", "price": "$2,800/mo", "street": "185 Walnut Street", "locality": "Willimantic, Connecticut", "specs": ["5 Beds", "2.5 Baths", "1,588 SF"], "description": "Spacious Victorian near ECSU and Main Street with hardwood floors, abundant natural light, a large kitchen, private laundry, parking, and heat and hot water included.", "mediaType": "image", "alt": "185 Walnut Street, Willimantic, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.raveis.com/prop/24205172/185-walnut-street-windham-ct-06226", "mediaSrc": "https://m1.cbhomes.com/p/229/24205172/BaDff5ccee65403/pds23tp.webp"}, {"status": "RENTED", "price": "$2,800/mo", "street": "251 Summit Street", "locality": "Willimantic, Connecticut", "specs": ["5 Beds", "2 Baths", "1,616 SF"], "description": "Spacious five-bedroom home near ECSU with hardwood floors, an updated stainless-steel kitchen, in-unit laundry, private parking, porch and yard space, and included heat and hot water.", "mediaType": "image", "alt": "251 Summit Street, Willimantic, Connecticut", "placeholder": false, "represented": "Landlord", "listingUrl": "https://www.raveis.com/prop/24210253/251-summit-street-windham-ct-06226", "mediaSrc": "https://m1.cbhomes.com/p/229/24210253/CFee057A811c419/pds23tp.webp"}];
 
         const groups = {
