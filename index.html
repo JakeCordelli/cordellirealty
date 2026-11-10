@@ -422,6 +422,8 @@
         .listing-address { font-weight: 700; font-size: 0.92rem; line-height: 1.25; }
         .listing-city { margin-top: 3px; color: var(--muted); font-size: 0.72rem; }
         .listing-price { color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 1rem; font-weight: 700; white-space: nowrap; }
+        .listing-over-asking { margin-top: 8px; font-size: 0.74rem; line-height: 1.5; color: var(--ink-soft); font-weight: 600; }
+        .listing-over-asking strong { color: var(--gold); }
         .listing-specs { margin-top: 13px; color: var(--muted); font-size: 0.70rem; line-height: 1.5; }
         .listing-description { margin: 12px 0 0; color: var(--ink-soft); font-size: 0.74rem; line-height: 1.5; display: block; overflow: visible; -webkit-line-clamp: unset; -webkit-box-orient: initial; }
         .listing-link {
@@ -1339,8 +1341,8 @@
     <script>
         const salesTransactions = [
             {
-                        "status": "UNDER CONTRACT",
-                        "price": "$775,000",
+                        "status": "SOLD",
+                        "price": "$792,160",
                         "street": "52 Stonewall Road",
                         "locality": "Salem, Connecticut",
                         "specs": [
@@ -1354,7 +1356,8 @@
                         "placeholder": false,
                         "represented": "Seller",
                         "listingUrl": "https://www.zillow.com/homedetails/52-Stonewall-Rd-Salem-CT-06420/80398182_zpid/",
-                        "mediaSrc": "https://photos.zillowstatic.com/fp/5ea56f8bc00345691fffaf1113debbbe-cc_ft_1344.webp"
+                        "mediaSrc": "https://photos.zillowstatic.com/fp/5ea56f8bc00345691fffaf1113debbbe-cc_ft_1344.webp",
+                        "askingPrice": 775000
             },
             {
                         "status": "FOR SALE",
@@ -1733,6 +1736,9 @@
             return amount;
         };
 
+        // Show closed sales in descending order of actual sale price.
+        groups.sold.items.sort((a, b) => parseAmount(b.price) - parseAmount(a.price));
+
         const formatTotal = (amount, monthly) => {
             let result;
             if (amount >= 1000000) result = `$${(amount / 1000000).toFixed(1).replace(/\.0$/, "")}M`;
@@ -1762,6 +1768,10 @@
         const cardMarkup = (item, index = 0) => {
             const statusClass = item.status === "SOLD" ? "sold" : item.status === "RENTED" ? "rented" : item.status === "UNDER CONTRACT" ? "contract" : item.status === "FOR RENT" ? "rent" : "";
             const specs = (item.specs || []).join(" &nbsp;•&nbsp; ");
+            const soldAmount = parseAmount(item.price);
+            const overAsking = item.status === "SOLD" && Number.isFinite(item.askingPrice) && soldAmount > item.askingPrice
+                ? `<div class="listing-over-asking"><strong>+$${(soldAmount - item.askingPrice).toLocaleString("en-US")} above asking</strong> (${((soldAmount - item.askingPrice) / item.askingPrice * 100).toFixed(2)}%)</div>`
+                : "";
             const image = item.mediaType === "image" && item.mediaSrc
                 ? `<img src="${escapeHTML(item.mediaSrc)}" alt="${escapeHTML(item.alt || item.street)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async" ${index === 0 ? 'fetchpriority="high"' : ''} referrerpolicy="no-referrer" onerror="this.remove()">`
                 : "";
@@ -1776,6 +1786,7 @@
                 </div>
                 <div class="listing-body">
                     <div class="listing-top"><div><div class="listing-address">${escapeHTML(item.street)}</div><div class="listing-city">${escapeHTML(item.locality)}</div></div><div class="listing-price">${escapeHTML(item.price)}</div></div>
+                    ${overAsking}
                     <div class="listing-specs">${specs}${item.represented ? ` &nbsp;•&nbsp; ${escapeHTML(item.represented)}` : ""}</div>
                     <p class="listing-description">${escapeHTML(item.description || "")}</p>
                     ${link}
