@@ -148,6 +148,7 @@ function initHeroTacticalDisplay(openDossierById) {
         });
     }
 
+    const romanNumerals = ["I", "II", "III"];
     switcher.innerHTML = HERO_EXECUTIONS.map(
         (exec, idx) => `
             <button
@@ -157,7 +158,7 @@ function initHeroTacticalDisplay(openDossierById) {
                 aria-selected="${idx === 0 ? "true" : "false"}"
                 data-exec-index="${idx}"
             >
-                <span class="tactical-tab-code">0${idx + 1} // ${escapeHtml(exec.headlineMetric)}</span>
+                <span class="tactical-tab-code">Plate ${romanNumerals[idx] || idx + 1} · ${escapeHtml(exec.headlineMetric)}</span>
                 <span class="tactical-tab-label">${escapeHtml(exec.title)}</span>
             </button>
         `
@@ -245,7 +246,7 @@ function renderStaticSections() {
                             <span class="market-chip-name">${escapeHtml(m.municipality)}</span>
                             <span class="market-chip-county">${escapeHtml(m.county)}</span>
                         </div>
-                        <span class="market-chip-count">${m.count} ${m.count === 1 ? "RECORD" : "RECORDS"}</span>
+                        <span class="market-chip-count">${m.count} ${m.count === 1 ? "Record" : "Records"}</span>
                     </div>
                 `
             )
@@ -401,8 +402,8 @@ function initDealLedger(prefillInquiry) {
 
         if (summaryBar) {
             summaryBar.innerHTML = `
-                <span>VIEWING: <strong>${escapeHtml(group.label.toUpperCase())}</strong> — ${escapeHtml(group.note)}</span>
-                <span>AGGREGATE VOLUME: <strong>${escapeHtml(formatCompactCurrency(total, group.monthly))}</strong> (${group.items.length} ASSETS)</span>
+                <span><strong>${escapeHtml(group.label)}</strong> — ${escapeHtml(group.note)}</span>
+                <span>Aggregate Volume · <strong>${escapeHtml(formatCompactCurrency(total, group.monthly))}</strong> (${group.items.length} ${group.items.length === 1 ? "Asset" : "Assets"})</span>
             `;
         }
 
@@ -411,30 +412,33 @@ function initDealLedger(prefillInquiry) {
                 const statusClass = getStatusClass(tx.status);
                 const overAsking =
                     tx.status === "SOLD" && typeof tx.askingPrice === "number" && tx.numericPrice > tx.askingPrice
-                        ? `<div class="deal-over-asking">+$${(tx.numericPrice - tx.askingPrice).toLocaleString("en-US")} above asking (${(((tx.numericPrice - tx.askingPrice) / tx.askingPrice) * 100).toFixed(2)}%)</div>`
+                        ? `<div class="deal-over-asking">+$${(tx.numericPrice - tx.askingPrice).toLocaleString("en-US")} above asking (+${(((tx.numericPrice - tx.askingPrice) / tx.askingPrice) * 100).toFixed(2)}%)</div>`
                         : "";
 
                 const offMarketPill = tx.isOffMarket
-                    ? `<span class="status-pill status-pill--off-market">OFF-MARKET</span>`
+                    ? `<span class="status-pill status-pill--off-market">Off-Market</span>`
                     : "";
 
                 return `
                     <article class="deal-card">
-                        <div class="deal-media">
-                            <div class="deal-media-fallback">
-                                ${fallbackSvg}
-                                <span>${escapeHtml(tx.municipality)}, CT</span>
-                            </div>
-                            <img
-                                src="${escapeHtml(tx.mediaSrc)}"
-                                alt="${escapeHtml(tx.alt)}"
-                                loading="${idx < 3 ? "eager" : "lazy"}"
-                                decoding="async"
-                                referrerpolicy="no-referrer"
-                            >
-                            <div class="deal-badges">
-                                <span class="status-pill ${statusClass}">${escapeHtml(tx.status)}</span>
-                                ${offMarketPill}
+                        <div class="deal-media-mat">
+                            <div class="deal-media">
+                                <div class="deal-media-fallback">
+                                    ${fallbackSvg}
+                                    <span>${escapeHtml(tx.municipality)}, CT</span>
+                                </div>
+                                <img
+                                    src="${escapeHtml(tx.mediaSrc)}"
+                                    alt="${escapeHtml(tx.alt)}"
+                                    loading="${idx < 3 ? "eager" : "lazy"}"
+                                    decoding="async"
+                                    referrerpolicy="no-referrer"
+                                >
+                                <div class="deal-media-keyline" aria-hidden="true"></div>
+                                <div class="deal-badges">
+                                    <span class="status-pill ${statusClass}">${escapeHtml(tx.status)}</span>
+                                    ${offMarketPill}
+                                </div>
                             </div>
                         </div>
                         <div class="deal-body">
@@ -449,9 +453,9 @@ function initDealLedger(prefillInquiry) {
                             <div class="deal-specs">${escapeHtml(tx.specs.join("  ·  "))}</div>
                             <p class="deal-description">${escapeHtml(tx.description)}</p>
                             <div class="deal-actions">
-                                <span class="deal-rep">REP: ${escapeHtml(tx.represented)}</span>
+                                <span class="deal-rep">Represented · ${escapeHtml(tx.represented)}</span>
                                 <button type="button" class="deal-action-btn" data-dossier-id="${escapeHtml(tx.id)}">
-                                    Dossier →
+                                    Memorandum →
                                 </button>
                             </div>
                         </div>
@@ -785,7 +789,7 @@ function initConfidentialForm() {
                 const dispatch = buildMandateDispatch(validation.sanitized, ref);
                 showStatus(
                     "success",
-                    `CONFIDENTIAL BRIEF LOGGED // ${ref}`,
+                    `Confidential Brief Logged · ${ref}`,
                     `Received directly for broker-owner Jake Cordelli (${FIRM_INFO.email}). Expect a direct response without intermediary handoff.`,
                     `<a class="btn btn--secondary" href="${escapeHtml(dispatch.mailtoHref)}">Send Copy via Email</a>
                      <button type="button" class="btn btn--ghost" id="copy-brief-btn">Copy Structured Brief</button>`
@@ -836,7 +840,7 @@ function initConfidentialForm() {
             const dispatch = buildMandateDispatch(validation.sanitized, staticRef);
             showStatus(
                 "success",
-                `CONFIDENTIAL BRIEF PREPARED // ${staticRef}`,
+                `Confidential Brief Prepared · ${staticRef}`,
                 `Your structured mandate brief passed validation and is ready for direct dispatch to Jake Cordelli at ${FIRM_INFO.email} or ${FIRM_INFO.phoneDisplay}.`,
                 `<a class="btn btn--primary" href="${escapeHtml(dispatch.mailtoHref)}">Dispatch via Email Client</a>
                  <button type="button" class="btn btn--secondary" id="copy-brief-btn">Copy Mandate Brief</button>`

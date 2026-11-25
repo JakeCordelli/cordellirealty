@@ -3,7 +3,7 @@
 ## Overview
 Cordelli Realty (`https://cordellirealty.com`) is a Connecticut commercial and residential real estate brokerage founded and owned by licensed broker **Jake Cordelli** (`REB.0793614`, established 2021, headquartered at `282 Main Street, Wethersfield, CT`).
 
-The site is designed around an institutional, low-observable **Lockheed SR-71 Blackbird** visual language — radar-absorbent matte black (`#060709`) and charcoal titanium (`#0B0D11`, `#10141B`) surfaces, angular chine-cut chamfers, hairline titanium panel borders, precision aerospace telemetry typography (`Space Grotesk`, `Inter`, `JetBrains Mono`), and restrained afterburner-amber (`#D98A2B`) accents — tailored for discreet commercial investment sales, off-market dispositions, and multifamily representation across Connecticut.
+The site combines a low-observable **Lockheed SR-71 Blackbird** structural language with private-client luxury materiality — deeper obsidian black (`#030304`) and warm carbon titanium (`#08080A`, `#0E0E10`) surfaces, angular chine-cut chamfers, ultra-fine warm titanium hairlines, sculptural editorial display typography (`Cormorant Garamond`, `Inter`, `JetBrains Mono`), brushed champagne gold (`#C4A775`) accents, and gallery-matted offering-memorandum photography — tailored for discreet commercial investment sales, off-market dispositions, and multifamily representation across Connecticut.
 
 ## Deployment & Architecture
 The repository remains **100% compatible with zero-build GitHub Pages deployment** from the repository root (`CNAME` = `www.cordellirealty.com`, entry point `index.html`) while also providing a zero-dependency hardened Node HTTP server (`server.mjs`) for local verification and full-stack deployments.

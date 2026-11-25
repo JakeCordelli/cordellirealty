@@ -80,11 +80,11 @@ export const FIRM_INFO = Object.freeze({
 export const HERO_EXECUTIONS = [
     {
         id: "exec-trumbull",
-        code: "EXEC-01 // OFF-MARKET COMMERCIAL",
+        code: "PLATE I · OFF-MARKET COMMERCIAL",
         classification: "CLOSED · DUAL REPRESENTATION",
         title: "6448 Main Street",
         location: "Trumbull, Connecticut",
-        coordinates: "41.2738° N, 73.2248° W",
+        coordinates: "41.2738° N · 73.2248° W",
         headlineMetric: "$1,800,000",
         secondaryMetric: "178,000 SF · 274 Beds · Healthcare",
         representation: "Buyer & Seller · Off-Market",
@@ -95,11 +95,11 @@ export const HERO_EXECUTIONS = [
     },
     {
         id: "exec-chestnut",
-        code: "EXEC-02 // MULTIFAMILY COMPOUND",
+        code: "PLATE II · MULTIFAMILY COMPOUND",
         classification: "CLOSED · DUAL REPRESENTATION",
         title: "19-29 Chestnut Street",
         location: "Willimantic, Connecticut",
-        coordinates: "41.7148° N, 72.2122° W",
+        coordinates: "41.7148° N · 72.2122° W",
         headlineMetric: "$1,200,000",
         secondaryMetric: "11 Units · 38 Beds · Multi-Building",
         representation: "Buyer & Seller",
@@ -110,11 +110,11 @@ export const HERO_EXECUTIONS = [
     },
     {
         id: "exec-newhaven",
-        code: "EXEC-03 // ACTIVE PIPELINE",
+        code: "PLATE III · ACTIVE MANDATES",
         classification: "ACTIVE · GREATER NEW HAVEN",
         title: "New Haven Multifamily Mandate",
         location: "New Haven, West Haven & Hamden, CT",
-        coordinates: "41.3083° N, 72.9279° W",
+        coordinates: "41.3083° N · 72.9279° W",
         headlineMetric: "$2,950,000",
         secondaryMetric: "5 Assets · 14 Units · University Corridor",
         representation: "Direct Seller Representation",
@@ -127,26 +127,26 @@ export const HERO_EXECUTIONS = [
 
 export const ADVISORY_CAPABILITIES = [
     {
-        code: "01",
-        tag: "LOW-OBSERVABLE",
+        code: "I",
+        tag: "Discretion",
         title: "Off-Market Dispositions",
         description: "Direct principal-to-principal matching for owners who require confidentiality, tenant continuity, and zero public listing fatigue."
     },
     {
-        code: "02",
-        tag: "INCOME ASSETS",
+        code: "II",
+        tag: "Income Assets",
         title: "Multifamily & Portfolio Sales",
         description: "Acquisition and disposition advisory across 2-to-11+ unit holdings and university-corridor portfolios throughout Connecticut."
     },
     {
-        code: "03",
-        tag: "INSTITUTIONAL",
+        code: "III",
+        tag: "Institutional",
         title: "Commercial & Specialized Real Estate",
         description: "Transaction structuring for large-footprint healthcare facilities, adaptive reuse holdings, and mixed-use commercial assets."
     },
     {
-        code: "04",
-        tag: "PRECISION",
+        code: "IV",
+        tag: "Precision",
         title: "Analytical Underwriting & Presentation",
         description: "Computer-science-backed pricing discipline paired with in-house architectural photography and Sotheby's-trained presentation standards."
     }
@@ -154,20 +154,20 @@ export const ADVISORY_CAPABILITIES = [
 
 export const EXECUTION_PROTOCOL = [
     {
-        phase: "PHASE 01",
-        code: "RECONNAISSANCE",
+        phase: "Stage I",
+        code: "Valuation",
         title: "Asset Valuation & Underwriting",
         detail: "Granular rent-roll, comparable, and highest-and-best-use analysis grounded in live Connecticut market intelligence."
     },
     {
-        phase: "PHASE 02",
-        code: "CAPITAL ALIGNMENT",
+        phase: "Stage II",
+        code: "Alignment",
         title: "Targeted Principal Outreach",
         detail: "Controlled distribution to pre-qualified private equity, family office, and regional operators — protecting asset privacy."
     },
     {
-        phase: "PHASE 03",
-        code: "EXECUTION",
+        phase: "Stage III",
+        code: "Closing",
         title: "Broker-Owner Closing Discipline",
         detail: "Direct negotiation led personally by Jake Cordelli from initial underwriting through LOI, diligence, and transfer."
     }
